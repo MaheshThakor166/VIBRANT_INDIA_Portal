@@ -1,4 +1,4 @@
-.container {
+/* .container {
   width: 350px;
   height: auto;
   background-color: #1e272e;
@@ -8,7 +8,7 @@
   transform: translate(-50%, -50%);
   border-radius: 4rem;
   padding: 10px;
-}
+} */
 header .header-top{
      padding: 27px 34px 100px 30px;
     display: flex;
