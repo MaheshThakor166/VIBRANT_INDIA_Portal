@@ -1,0 +1,316 @@
+.container {
+  width: 350px;
+  height: auto;
+  background-color: #1e272e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4rem;
+  padding: 10px;
+}
+header .header-top{
+     padding: 27px 34px 100px 30px;
+    display: flex;
+    align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f24d;
+  /* box-shadow: 4px 2px 2px #dad6d669; */
+  padding-bottom: 50px;
+}
+.logo-container{
+    max-width:168px;
+}
+.logo-container img{
+    height: 100%;
+    width: 100% ;
+}
+header .right-part{
+    display: flex !important;
+    align-items: center;
+    gap: 50px;
+}
+.rg-bt{
+    display: none !important;
+}
+header .inqury-logo{
+    max-width: 40px;
+}
+header .inqiry-box .inqury-logo img{
+    height: 100%;
+    width: 100%;
+}
+header .inqiry-box .inqury-txt{
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-left: 5px;
+}
+header .nav-container{
+    /* display: flex;
+    width: 100%;
+    padding: 10px 10px 10px 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+    box-shadow: 0 0 45px 0 var(--shadow); */
+}
+header .header-bottom .nav-container{
+    display: flex;
+    max-width: 1040px;
+    margin: auto;
+    justify-content: center;
+
+}
+header .nav-container .nav-view{
+    display: flex;
+    width: 100%;
+    border-radius: 50px;
+    padding: 9px 10px 9px 7px;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: rgb(9 30 66 / 0%) 1px -1px 5px 0px, rgb(9 30 66 / 5%) -1px 0px 4px 1px;
+}
+header .nav-container .nav-view .nav-item{
+   list-style-type: none;
+   float: left;
+   padding: 0 28px;
+   border-right: 1px solid #80808030;
+}
+
+header .header-bottom{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 98px;
+}
+header .nav-container .nav-view .nav-item:nth-last-child(1){
+    border-right: none;
+ }
+ header .nav-container .nav-view .nav-item:nth-child(5) {
+    border-right: none; /* Remove it for the second-to-last item */
+}
+ header .nav-container .nav-view .nav-item .nav-link {
+    font-size: 17px;
+    position: relative;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 0;
+    overflow: hidden; /* Ensure the before element does not overflow */
+}
+
+header .nav-container .nav-view .nav-item .nav-link::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    /* bottom: -10px; */
+    width: 0;
+    top: 25px;
+    background-color: #828589;
+    transition: width 0.7s ease-in-out, left 0.7s ease-in-out, opacity 0.7s ease-in-out;
+
+}
+
+header .nav-container .nav-view .nav-item .nav-link:hover::before {
+    left: 0; /* Move the start position to the left */
+    width: 100%; /* Expand the width to full */
+    opacity: 1; /* Fade in */
+}
+
+
+.header-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between navigation items and search */
+    align-items: center;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-view {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .nav-item {
+    margin-right: 20px;
+  }
+
+  .s-box {
+    margin-left: auto; /* Push the search box to the right */
+  }
+
+  .search-box {
+    position: relative;
+  }
+
+  .search-container input[type="text"] {
+    padding: 5px;
+    width: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  #suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: none;
+  }
+
+  #suggestions li {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  #suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+
+  .menu-btn{
+     display: none;
+  }
+  .close-btn{
+    display: none;
+  }
+
+@media screen and (max-width:991px) {
+    .logo-container{
+     max-width: 146px !important;
+    }
+    header .inqiry-box .inqury-txt {
+     font-size: 14px;
+     font-weight: 500;
+     margin-left: 3px;
+ }
+ header .nav-container .nav-view {
+    padding: 7px 27px 7px 7px;
+    border-radius: 0;
+}
+header .nav-container .nav-view .nav-item {
+    padding: 0 12px;
+}
+}
+
+@media screen and (max-width:767px) {
+    header .nav-container .nav-view .nav-item .nav-link {
+        font-size: 14px;
+    }
+    .menu-btn{
+      display: block;
+    }
+    header .header-bottom {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 3px;
+    }
+    header .nav-container .nav-view{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: -1000px;
+        right: 0;
+        padding: 0;
+        z-index: 9;
+        border-radius: 0;
+        width: 320px;
+         background-color: #052c2b;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    header .nav-container .nav-view.show{
+        left: 0;
+    }
+    header .header-bottom{
+        padding: 10px 30px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+    .search-box{
+        width: 234px;
+        border: 1px solid grey;
+        background: white;
+        padding: 5px;
+        overflow: hidden;
+        line-height: 41px;
+    }
+    .search-box::placeholder{
+      color: var(--primary-color);
+    }
+    .search-box .fa{
+        padding:15px;
+    }
+    .header-bottom .menu-btn
+    {   background-color: transparent;
+    border: 0;
+    font-size: 30px;
+    color: var(--primary-color);
+    }
+    header .mobile-logo
+    {
+        display: block;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid white;
+        display: flex;
+        /* justify-content: center; */
+        padding: 11px 40px;
+    }
+    header .nav-container .nav-view .nav-item {
+        border-bottom: 1px solid white;
+        display: block;
+        width: 100%;
+        padding: 10px 30px;
+        text-align: left;
+    }
+    header .nav-container .nav-view .nav-item .nav-link{
+      font-size: 19px;
+    }
+
+    .close-btn
+    {
+    z-index: 999;
+    color: white;
+    position: absolute;
+    left: 269px;
+    position: fixed;
+    top: 12px;
+    font-size: 50px;
+    }
+    header .header-top{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    header .header-bottom {
+        padding: 10px 10px;
+    }
+}

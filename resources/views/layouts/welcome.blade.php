@@ -3,8 +3,9 @@
 <x-head/>
 <body>
     <x-header />
-    <div> Hwekkkko  </div>
-    <x-footer />
+     <x-footer />
+     <x-banner />
 
+<x-script/>
 </body>
 </html>

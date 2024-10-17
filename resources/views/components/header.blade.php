@@ -1,21 +1,112 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <section class="header-top">
+        <div class="left-part">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="{{ asset('images/logo1.png') }}" alt="company logo">
+                </a>
+            </div>
+        </div>
+        <div class="d-lg-block d-md-block d-sm-none d-none">
+        <div class="right-part d-sm-none d-md-block">
+            <!--login-btn-->
+            <a href="#" class="primary-btn">Sign in</a>
+            <!--inqury btn-->
+            <div class="inqiry-box">
+                <a href="#"
+                    class="nav-link nav-link-m text-dark nav-link-fw position-relative d-flex align-items-center">
+                    <span class="inqury-logo">
+                        <img src="{{ asset('images/INQUIRY.png') }}" alt="inquiry">
+                    </span>
+                    <span class="inqury-txt">
+                        inquiry
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="header-bottom">
+        <button class="menu-btn d-lg-none d-sm-block d-md-none" id="menu-btn">
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+
+        <nav class="nav-container">
+            <span class="close-btn" id="close-btn">&times;</span>
+
+            <ul class="nav-view">
+                <li class="nav-item mobile-logo py-3 d-lg-none d-sm-block d-md-none">
+                    <div class="logo-container d-md-block d-sm-block d-lg-none">
+                        <a href="#">
+                            <img src="{{ asset('images/logo1.png') }}" alt="company logo" style="width: 160px;">
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a href="#" class="nav-link">Top Category</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a href="#" class="nav-link">New Arrival</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Tranding Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blogs</a>
+                </li>
+                <li class="s-box d-none d-lg-block d-md-block">
+                        <form action="" class="search-box">
+                            <input type="text" id="search-bar" placeholder="Search here ...">
+                            <i class="fa fa-search magnifier"></i>
+                          </form>
+                          <ul id="suggestions"></ul>
+
+                </li>
+                <li class="s-box d-lg-none d-md-none d-sm-block">
+                <div class="right-part mt-5">
+
+                    <!--login-btn-->
+                    <a href="#" class="primary-btn">Sign in</a>
+                    <!--inqury btn-->
+                    <div class="inqiry-box">
+                        <a href="#" class="nav-link nav-link-m text-dark nav-link-fw position-relative d-flex align-items-center">
+                            <span class="inqury-logo">
+                                <img src="http://127.0.0.1:8000/images/INQUIRY.png" alt="inquiry">
+                            </span>
+                            <span class="inqury-txt">
+                                inquiry
+                            </span>
+                        </a>
+                    </div>
+                </div>
                 </li>
             </ul>
-        </div>
-    </nav>
+
+
+            {{-- <div class="search-box">
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                    <ul id="suggestions"></ul>
+                </div>
+
+            </div> --}}
+        </nav>
+        {{-- <div class="s-box d-md-none d-sm-block d-lg-none d-xl-none">
+             <form action="" class="search-box">
+                <input type="text" id="search-bar" placeholder="Search here ...">
+                <i class="fa fa-search magnifier"></i>
+              </form>
+              <ul id="suggestions" style="display: none;"></ul>
+        </div> --}}
+
+        <div class="s-box d-md-none d-sm-block d-lg-none d-xl-none">
+            <form action="" class="search-box">
+                <input type="text" id="search-bar" placeholder="Search here ...">
+                <i class="fa fa-search magnifier"></i>
+              </form>
+              <ul id="suggestions"></ul>
+
+            </div>
+    </div>
 </header>

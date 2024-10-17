@@ -1,0 +1,61 @@
+.banner-section{
+    position: relative;
+    overflow-x: hidden;
+    z-index: -1;
+}
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Set a specific height for the slideshow */
+    /* overflow: hidden; */
+  }
+
+  .slideshow img {
+    width: 100%;
+    height: 100%; /* Maintain height uniformity */
+    position: absolute;
+    opacity: 0;
+    border-radius: 13px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  /* Product description under the slideshow */
+  .product-info {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 992px) {
+    .slideshow {
+      height: 332px;
+    }
+  }
+
+  /* Media query for screens less than 767px */
+  @media screen and (max-width: 767px) {
+    .slideshow {
+      height: 100%; /* Adjust height for mobile */
+    }
+
+    .slideshow img {
+      position: absolute;
+      opacity: 0;
+      object-fit: cover; /* Maintain image proportions */
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+      position: relative; /* Ensure active image shows properly */
+    }
+  }
+  @media screen and (max-width: 575px) {
+    .slideshow {
+      height: 100%; /* Adjust height for mobile */
+    }
+  }

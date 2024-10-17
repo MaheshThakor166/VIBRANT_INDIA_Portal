@@ -1,5 +1,5 @@
 <footer>
-    <div class="text-center">
+    {{-- <div class="text-center">
         <p>&copy; {{ date('Y') }} My Website. All rights reserved.</p>
-    </div>
+    </div> --}}
 </footer>
