@@ -18,11 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.welcome');
 });
-Route::get('/signup', function () {
-    return view('auth.signup');
-});
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/register', [AuthController::class, 'registerform'])->name('register');
+Route::post('/register', [AuthController::class, 'registersave'])->name('registersave');
 
+Route::get('/login', [AuthController::class, 'loginform'])->name('login');
+Route::post('/login', [AuthController::class, 'loginsave'])->name('loginsave');
+
+Route::get('/home', [AuthController::class, 'home'])->name('home');
+
+Route::get('/admin', [AuthController::class, 'adminview'])->name('admin.view');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
