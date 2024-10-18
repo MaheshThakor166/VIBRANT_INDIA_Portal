@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('layouts.welcome');
+});
+Route::get('/signup', function () {
+    return view('auth.signup');
+});
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
 
