@@ -5,6 +5,7 @@
     <x-header />
      <x-footer />
      <x-banner />
+     <x-topcategory />
 
 <x-script/>
 </body>

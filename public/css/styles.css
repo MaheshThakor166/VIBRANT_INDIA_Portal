@@ -3,8 +3,13 @@
 @import url('./banner.css');
 @import url('./signup.css');
 @import url('./login.css');
+<<<<<<< HEAD
 @import url('./admin.css');
 .error-message {
     color: red;
     font-size: 14px;
 }
+=======
+@import url('./topcategory.css');
+
+>>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9

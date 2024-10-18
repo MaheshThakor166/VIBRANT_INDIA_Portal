@@ -9,6 +9,7 @@ body{
     --primary-color:#008483;
     --dark-color:#000000e5;
     --light-color:#ffff;
+    --ternery-color:#005353;
 }
 
 input[type="text"]::-ms-clear {
@@ -20,6 +21,17 @@ input[type="text"]::-ms-clear {
 input[type="text"]::-webkit-search-cancel-button {
     display: none;
 }
+
+/*margin class start*/
+  .section-margin{
+    margin: 100px 0;
+  }
+  @media screen and (max-width:574px) {
+    .section-margin {
+        margin: 55px 0;
+    }
+  }
+/*marginn class end*/
 
 /*search box start*/
 .s-box{
@@ -103,7 +115,11 @@ input[type="text"]::-webkit-search-cancel-button {
     background: #bebebe !important;
     color: var(--dark-color) !important;
 }
-
+@media screen and (max-width:767px) {
+    .cta:before {
+        width: 100% !important;
+        }
+}
 
 .search-box:hover input{
     display: block;
@@ -133,3 +149,63 @@ input[type="text"]::-webkit-search-cancel-button {
    background-color: var(--primary-color);
 }
 /*priary btn end*/
+
+.main-heading{
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 33px;
+    font-weight: 600;
+    color: var(--ternery-color);
+    position: relative;
+ }
+ .main-heading::before{
+    content: "";
+    position: absolute;
+    right: -66px;
+    display: block;
+    height: 2px;
+    width: 60px;
+    top: 50%;
+    background-color: #569815;
+ }
+/*common heading*/
+.heading-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:575px){
+    .main-heading{
+        max-width: 205px;
+        font-size: 26px;
+    }
+    .heading-section {
+        flex-direction: column;
+    }
+    .primary-btn {
+        margin-top: 20px;
+       max-width: 150px;
+    }
+
+
+}
+.inqury-cheap{
+    margin: 8px 0;
+    padding: 9px 34px;
+     background-color: rgb(188, 11, 11);
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s all ease-in-out;
+}
+.inqury-cheap a{
+    display: flex;
+    justify-content: center;
+    color: var(--light-color) !important;
+    text-decoration: none;
+}
+.inqury-cheap:hover{
+  color: var(--dark-color);
+  background-color: #008483;
+}

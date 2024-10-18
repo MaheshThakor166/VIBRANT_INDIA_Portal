@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
 
 .main-box {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -26,7 +29,12 @@
     font-size: 40px;
     font-weight: bold;
   }
+<<<<<<< HEAD
 
+=======
+  .input-field {
+  }
+>>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
   .input-field-icon {
     border: 1px solid grey;
     padding: 11px;
@@ -79,6 +87,7 @@
     color: red;
     font-size: 12px;
   }
+<<<<<<< HEAD
   @media (max-width: 576px) {
     .register-image {
       display: none;
@@ -127,3 +136,5 @@
     
   }
 >>>>>>> Stashed changes
+=======
+>>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
