@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #1e1e2d;
+    color: #fff;
+    width: 250px;
+    height: 100vh;
+    transition: transform 0.3s ease;
+}
+
+.sidebar nav {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav a:hover {
+    background-color: #333;
+}
+
+.sidebar nav a.logout {
+    margin-top: auto;
+    color: #ff4d4d;
+}
+
+.main-content {
+    flex: 1;
+    background: #f5f6fa;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e2d;
+    padding: 10px;
+    color: #fff;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+.search-bar {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dashboard-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    background: #1e1e2d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.top-products {
+    background: #1e1e2d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.top-products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.top-products th, .top-products td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+.popularity-bar {
+    height: 10px;
+    background-color: #6c63ff;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+.logo {
+    padding: 20px;
+    text-align: center;
+    background-color: #1e1e2d;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
