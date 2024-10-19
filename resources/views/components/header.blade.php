@@ -3,7 +3,7 @@
         <div class="left-part">
             <div class="logo-container">
                 <a href="#">
-                    <img src="{{ asset('images/logo1.png') }}" alt="company logo">
+                    <img src="{{ asset('images/company-logo.png') }}" alt="company logo">
                 </a>
             </div>
         </div>
@@ -36,10 +36,10 @@
             <span class="close-btn" id="close-btn">&times;</span>
 
             <ul class="nav-view">
-                <li class="nav-item mobile-logo py-3 d-lg-none d-sm-block d-md-none">
+                <li class="nav-item mobile-logo py-4 px-1 d-lg-none d-sm-block d-md-none">
                     <div class="logo-container d-md-block d-sm-block d-lg-none">
                         <a href="#">
-                            <img src="{{ asset('images/logo1.png') }}" alt="company logo" style="width: 160px;">
+                            <img src="{{ asset('images/mobile-logo.png') }}" alt="company logo" style="height: 100%; width:187px;">
                         </a>
                     </div>
                 </li>
