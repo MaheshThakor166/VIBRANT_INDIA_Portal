@@ -164,9 +164,7 @@
   }
 
 
-  /* .zoom img:hover {
-    opacity: 0;
-  } */
+ 
   figure.zoom img {
     transition: opacity .5s;
     display: block;

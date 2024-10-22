@@ -209,3 +209,36 @@ input[type="text"]::-webkit-search-cancel-button {
   color: var(--dark-color);
   background-color: #008483;
 }
+.thumbnail_container {
+    padding-bottom: 100%;
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.thumbnail_container .thumbnail {
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+}
+.thumbnail_container .thumbnail img {
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+}
