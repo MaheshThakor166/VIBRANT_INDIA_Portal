@@ -10,7 +10,9 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="register-box1">
                 <div class="register-header">Registration Form</div>
-                <form class="mt-3" onsubmit="return validateForm()">
+                <form class="mt-3" method="POST" action="{{route('registersave')}}">
+                  @csrf
+                  @method('post')
                   <div class="input-field">
                     <span><i class="fa-solid fa-user input-field-icon"></i></span>
                     <input
@@ -87,7 +89,7 @@
                   </div>
                   <div class="mt-3">
                     <span class="account-text">Already have an account? </span>
-                    <a class="login-link" href="Login.html"> Login </a>
+                    <a class="login-link" href="{{route('login')}}"> Login </a>
                   </div>
                 </form>
               </div>

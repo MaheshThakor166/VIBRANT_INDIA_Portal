@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,29 +10,26 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="register-box1">
                 <div class="register-header">Login</div>
-<<<<<<< HEAD
 
                 @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
-            @endif
+                @endif
 
-            @if (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-                <form class="mt-3"  method="POST" action="{{route('loginsave')}}">
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
+                <form class="mt-3" method="POST" action="{{ route('loginsave') }}">
                   @csrf
-                 
-=======
-                <form class="mt-3" onsubmit="return validateForm()">
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
+
                   <div class="input-field mt-3">
-                    <span
-                      ><i class="fa-solid fa-envelope input-field-icon"></i
-                    ></span>
+                    <span>
+                      <i class="fa-solid fa-envelope input-field-icon"></i>
+                    </span>
                     <input
                       class="input-type-box"
                       type="email"
@@ -46,13 +38,10 @@
                       placeholder="Enter Your Email"
                     />
                   </div>
-<<<<<<< HEAD
                   @error('email')
                   <span class="error-message">{{ $message }}</span>
-              @enderror
-=======
+                  @enderror
                   <span class="error-message" id="emailError"></span>
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
 
                   <div class="input-field mt-3">
                     <span><i class="fa-solid fa-lock input-field-icon"></i></span>
@@ -64,14 +53,11 @@
                       placeholder="Enter Your Password"
                     />
                   </div>
-<<<<<<< HEAD
                   @error('password')
                   <span class="error-message">{{ $message }}</span>
-                 @enderror   
-=======
+                  @enderror
                   <span class="error-message" id="passwordError"></span>
 
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
                   <div class="input-field mt-3">
                     <input
                       type="submit"
@@ -82,11 +68,7 @@
                   </div>
                   <div class="mt-3">
                     <span class="account-text"> Don't have an account? </span>
-<<<<<<< HEAD
-                    <a class="login-link" href="{{route('register')}}"> Sign Up </a>
-=======
-                    <a class="login-link" href="SignUp.html"> Sign Up </a>
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9
+                    <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
                   </div>
                 </form>
               </div>
@@ -112,7 +94,3 @@
     </div>
 </body>
 </html>
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> ca1050c9f13911eede25781ffddaa2a7f951ded9

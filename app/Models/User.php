@@ -15,4 +15,5 @@ class User extends Authenticatable
         'password', 
         'contact_no',
     ];  
+    
 }

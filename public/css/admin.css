@@ -8,7 +8,7 @@ body {
 }
 
 .sidebar {
-    background-color: #1e1e2d;
+    background-color: #343480;
     color: #fff;
     width: 250px;
     height: 100vh;
@@ -44,7 +44,7 @@ body {
 
 .main-content {
     flex: 1;
-    background: #f5f6fa;
+    background: #546093;
     padding: 20px;
 }
 
@@ -92,14 +92,14 @@ body {
 }
 
 .card {
-    background: #1e1e2d;
+    background:#282850;
     color: #fff;
     padding: 20px;
     border-radius: 10px;
 }
 
 .top-products {
-    background: #1e1e2d;
+    background: #282850;
     color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -142,7 +142,7 @@ body {
 .logo {
     padding: 20px;
     text-align: center;
-    background-color: #1e1e2d;
+    background-color: #3c3c9e;
 }
 
 .logo-img {

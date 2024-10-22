@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <x-head/>
+  <x-head />
 </head>
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="logo">
-                {{-- <img src="../adminpanel/images/logo.png" alt="Logo" class="logo-img"> --}}
+                <img src="{{ asset('images/mobile-logo.png') }}" alt="Logo" class="logo-img">
 
             </div>
             <nav>
-                <a href="#" class="active"><i class="fa fa-home"></i> Dashboard</a>
-                <a href="#"><i class="fa fa-users"></i> Users</a>
-                <a href="#"><i class="fa fa-shopping-cart"></i> Orders</a>
-                <a href="#"><i class="fa fa-box"></i> Products</a>
-                <a href="#"><i class="fa fa-chart-line"></i> Reports</a>
-                <a href="#" class="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                    <a href="#" class="active"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="{{ route('userindex') }}"><i class="fa-solid fa-user"></i> Users</a>
+
+                    <a href="#"><i class="fa-solid  fa-shopping-cart"></i> Orders</a>
+                    <a href="#"><i class="fa-solid fa-box"></i> Products</a>
+                    <a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a>
+                    <a href="#" class="logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
             </nav>
         </aside>
 
         <main class="main-content">
-            <!-- <header class="topbar">
-                <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa fa-bars"></i></button>
-              
-                <div class="user-actions">
-                    <i class="fa fa-bell notification-icon"></i>
-                    <img src="user-avatar.png" alt="User" class="user-avatar">
-                </div>
-            </header> -->
+       
 
             <section class="dashboard-metrics">
                 <div class="card">
@@ -49,7 +43,6 @@
                     <h3>125</h3>
                 </div> -->
             </section>
-
             <section class="top-products">
                 <h2>Top Products</h2>
                 <table>
