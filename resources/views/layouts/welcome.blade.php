@@ -6,6 +6,7 @@
      <x-footer />
      <x-banner />
      <x-topcategory />
+     <x-trandingproduct  />
 
 <x-script/>
 </body>
