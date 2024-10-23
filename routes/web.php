@@ -56,7 +56,9 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->nam
 
 Route::get('/admin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
-
+Route::get('/inqury', function () {
+    return view('inquiryform');
+})->name('inquiryform');
 
 // Route::group(['middleware' => 'auth.basic'], function () {
 //     Route::prefix('admin')->group(function () {
