@@ -1,8 +1,8 @@
-<section class="section-margin">
+<section class="section-margin" id="TrendingProducts">
     <div class="container">
         <div class="heading-section">
             <div class="main-heading">
-                Tranding Products
+                Trending Products
             </div>
             <div class="btn-view primary-btn">
                 view More

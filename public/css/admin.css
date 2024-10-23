@@ -5,13 +5,15 @@ body {
 
 .dashboard-container {
     display: flex;
+    
 }
 
 .sidebar {
     background-color: #343480;
     color: #fff;
     width: 250px;
-    height: 100vh;
+    height: 120vh;
+   
     transition: transform 0.3s ease;
 }
 

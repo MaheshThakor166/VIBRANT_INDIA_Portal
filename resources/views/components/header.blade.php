@@ -44,16 +44,16 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Top Category</a>
+                    <a href="#TopCategory"   class="nav-link">Top Category</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">New Arrival</a>
+                    <a href="#NewArrival" class="nav-link">New Arrival</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Tranding Products</a>
+                    <a href="#TrendingProducts" class="nav-link">Trending Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Blogs</a>
+                    <a href="#Blogs" class="nav-link">Blogs</a>
                 </li>
                 <li class="s-box d-none d-lg-block d-md-block">
                         <form action="" class="search-box">
