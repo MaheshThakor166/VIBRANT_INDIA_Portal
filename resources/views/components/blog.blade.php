@@ -41,7 +41,7 @@
             <div class="col-lg-5 mt-sm-5 mt-0">
                 <div class="blog-list">
                     <div class="blog-item">
-                        <img src="{{ asset('images/b1.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/ba2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">12 July 2023</p>
                             <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="blog-item">
-                        <img src="{{ asset('images/b3.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/ba2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">12 July 2023</p>
                             <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="blog-item">
-                        <img src="{{ asset('images/b4.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/ba3.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">19 September 2023</p>
                             <h3 class="blog-title">Fableart Microwave Safe Stainless Steel Kitchen Food Storage</h3>
