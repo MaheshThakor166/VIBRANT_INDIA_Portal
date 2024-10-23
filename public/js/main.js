@@ -308,3 +308,93 @@ popup.addEventListener('click', (e) => {
   }
 });
 
+
+    /*read more add*/
+document.addEventListener("DOMContentLoaded", function () {
+    // Set a word limit for when to add "Read More"
+    var wordLimit = 33; // Number of words to show initially (adjust as needed)
+
+    // Get all text wrappers
+    var textWrappers = document.querySelectorAll('.text-wrapper');
+
+    textWrappers.forEach(function (wrapper) {
+        var content = wrapper.querySelector(".content-txt").innerHTML;
+        var words = content.split(" ");
+
+        if (words.length > wordLimit) {
+            // Split the content into two parts: visible and hidden
+            var visibleText = words.slice(0, wordLimit).join(" ");
+            var hiddenText = words.slice(wordLimit).join(" ");
+
+            // Create the structure: visible text + dots + hidden text + "Read More" link
+            var newHtml = `
+                <span class="visible-text">${visibleText}</span>
+                <span class="dots">...</span>
+                <span class="full-text">${hiddenText}</span>
+                <a href="javascript:void(0);" class="readmore-btn">Read more</a>
+            `;
+
+            wrapper.innerHTML = newHtml; // Replace the original content with the new structured content
+
+            var readMoreBtn = wrapper.querySelector(".readmore-btn");
+            var fullText = wrapper.querySelector(".full-text");
+            var dots = wrapper.querySelector(".dots");
+
+            readMoreBtn.addEventListener("click", function () {
+                if (fullText.style.display === "none" || fullText.style.display === "") {
+                    fullText.style.display = "inline"; // Show the full text
+                    dots.style.display = "none"; // Hide the dots
+                    readMoreBtn.innerHTML = "Read less";
+                } else {
+                    fullText.style.display = "none"; // Hide the full text
+                    dots.style.display = "inline"; // Show the dots
+                    readMoreBtn.innerHTML = "Read more";
+                }
+            });
+        }
+    });
+});
+
+
+
+
+// let scrollTimeout;
+
+//         window.addEventListener("scroll", function () {
+//           clearTimeout(scrollTimeout); // Clear previous timeout
+//           scrollTimeout = setTimeout(function () {
+//             var fullTexts = document.querySelectorAll('.full-text');
+//             var dots = document.querySelectorAll('.dots');
+//             var buttons = document.querySelectorAll('.readmore-btn');
+
+//             fullTexts.forEach(function (text) {
+//               text.style.display = "none";
+//             });
+
+//             dots.forEach(function (dot) {
+//               dot.style.display = "inline";
+//             });
+
+//             buttons.forEach(function (button) {
+//               button.textContent = "Read more";
+//             });
+//           }, 200);
+//         });
+
+window.addEventListener("scroll", function () {
+    var fullTexts = document.querySelectorAll('.full-text');
+    var dots = document.querySelectorAll('.dots');
+    var buttons = document.querySelectorAll('.readmore-btn');
+
+    fullTexts.forEach(function (text) {
+      text.style.display = "none";
+    });
+
+    dots.forEach(function (dot) {
+      dot.style.display = "inline";
+    });
+
+    buttons.forEach(function (button) {
+      button.textContent = "Read more";
+    });
+  });

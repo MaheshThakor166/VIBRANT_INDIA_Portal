@@ -24,10 +24,13 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
-                            FEATHER, F-ROUND BUTTON DRAWER KNOB, ZBlack, Zinc
-                        </p>
+                        <div class="text-wrapper">
+                            <p class="card-description content-txt">
+                                FEATHER, F-ROUND BUTTON DRAWER KNOB, ZBlack, Zinc
+                                FEATHER, F-ROUND BUTTON DRAWER KNOB, ZBlack, Zinc
+                                FEATHER, F-ROUND BUTTON DRAWER KNOB, ZBlack, Zinc
+                            </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">Glass
                                     Dor
@@ -61,9 +64,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
+                            aveo, glass to glass 180° hinge, stainless steel satin, stainless steel 304, (l) 111.00
                             aveo, glass to glass 180° hinge, stainless steel satin, stainless steel 304, (l) 111.00 </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Glass to Glass Hinges
@@ -97,10 +102,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             vms trade link, slim partition, antique black, glass, (l) 16.00 (w) 80.00 mm
                         </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Glass to Glass Hinges
@@ -135,10 +141,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             vishwa, angular stop cock, chrome plated, brass, (l) 4.00 in
                         </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Angular Stop Cock
@@ -173,10 +180,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             FEATHER, F-ROUND BUTTON DRAWER KNOB, ZBlack, Zinc
                         </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">Glass
                                     Dor
@@ -210,9 +218,10 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             aveo, glass to glass 180° hinge, stainless steel satin, stainless steel 304, (l) 111.00 </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Glass to Glass Hinges
@@ -246,10 +255,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             vms trade link, slim partition, antique black, glass, (l) 16.00 (w) 80.00 mm
                         </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Glass to Glass Hinges
@@ -284,10 +294,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p class="card-description">
+                        <div class="text-wrapper">
+                        <p class="card-description content-txt">
                             vishwa, angular stop cock, chrome plated, brass, (l) 4.00 in
                         </p>
+                        </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Product: </span><span class="pro-name">
                                     Angular Stop Cock

@@ -167,10 +167,32 @@
     transform: scale(0.96);
   }
 
-
+ .card-view .text-wrapper{
+    margin-top: 15px;
+ }
 
   figure.zoom img {
     transition: opacity .5s;
     display: block;
     width: 100%;
   }
+
+
+  .text-wrapper p {
+    display: inline;
+}
+.full-text {
+    display: none; /* Hidden initially */
+}
+.dots {
+    display: none !important;
+}
+.readmore-btn {
+        color: #747481;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 5px;
+        text-decoration: underline;
+        font-size: 12px;
+
+    }

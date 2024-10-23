@@ -288,3 +288,19 @@ input[type="text"]::-webkit-search-cancel-button {
     cursor: pointer;
   }
 
+  .text-wrapper p {
+    display: inline;
+  }
+  .full-text {
+    display: none; /* Hidden initially */
+  }
+  .dots {
+    display: inline;
+  }
+  .readmore-btn {
+    color: blue;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    text-decoration: underline;
+  }

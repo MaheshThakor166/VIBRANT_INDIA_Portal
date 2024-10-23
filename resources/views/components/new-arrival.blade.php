@@ -21,9 +21,12 @@
                             </div>
                         </div>
                     </div>
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         Shri & Sam Stainless Steel Serving Bowl with Stainless Steel Lid
+                        Steel Serving Bowl with Stainless Steel Lid
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Stainless Steel Houseware</span></h6>
 
@@ -58,10 +61,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         Vinod Stainless Steel Induction and Gas Stove Friendly Master Chef Cookware Set
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Kitchen Ware</span></h6>
 
@@ -96,10 +100,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         Spoon Set for Dining Table Stylish, Mirror Polished
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Table Ware</span></h6>
                         <h6 class="arrival-product-name"><span class="title">Product: </span><span
@@ -133,9 +138,12 @@
                             </div>
                         </div>
                     </div>
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         KAT, Palmet Hold Open Door Closer, Carbon Black
+
                     </p>
+                    </div>
                     <div class="card-bottom">
                          <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Utensils</span></h6>
                         <h6 class="arrival-product-name"><span class="title">Product: </span><span
@@ -172,9 +180,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         Emergity Plastic Manual Vegetable Chopper for Kitchen,Vegetable Cutter
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Plasticware</span></h6>
                         <h6 class="arrival-product-name"><span class="title">Product: </span><span
@@ -208,9 +218,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="arrival-card-description">
+                    <div class="text-wrapper">
+                    <p class="arrival-card-description content-txt">
                         Karmbhumi Brass Thali Set Luxury Spoon Restaurant Ware
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Hotelware</span></h6>
 
@@ -245,9 +257,11 @@
                         </div>
                     </div>
                 </div>
-                <p class="arrival-card-description">
+                <div class="text-wrapper">
+                <p class="arrival-card-description content-txt">
                     MILTON Ernesto Inner Stainless Steel Casserole
                 </p>
+                </div>
                 <div class="card-bottom">
                     <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Kitchen Appliances</span></h6>
 
@@ -282,9 +296,11 @@
                         </div>
                     </div>
                 </div>
-                <p class="arrival-card-description">
+                <div class="text-wrapper">
+                <p class="arrival-card-description content-txt">
                     eCraftIndia Meditating Monk Buddha Smoke Backflow
                 </p>
+                </div>
                 <div class="card-bottom">
                     <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Gift & Decore</span></h6>
 
