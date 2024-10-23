@@ -5,14 +5,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow1">
             <img
-              src="{{ asset('images/b1.jpg') }}"
+              src="{{ asset('images/ba1.jpg') }}"
               class="active"
             />
             <img
-              src="{{ asset('images/b3.jpg') }}"
+              src="{{ asset('images/ba3.jpg') }}"
             />
             <img
-              src="{{ asset('images/b5.jpg') }}"
+              src="{{ asset('images/ba5.jpg') }}"
             />
           </div>
         </div>
@@ -21,14 +21,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow2">
             <img
-              src="{{ asset('images/b2.jpg') }}"
+              src="{{ asset('images/ba2.jpg') }}"
               class="active"
             />
             <img
-              src="{{ asset('images/b4.jpg') }}"
+              src="{{ asset('images/ba4.jpg') }}"
             />
             <img
-              src="{{ asset('images/b6.jpg') }}"
+              src="{{ asset('images/ba6.jpg') }}"
             />
           </div>
         </div>
@@ -37,14 +37,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow3">
             <img
-              src="{{ asset('images/b1.jpg') }}"
+              src="{{ asset('images/ba1.jpg') }}"
               class="active"
             />
             <img
-              src="{{ asset('images/b2.jpg') }}"
+              src="{{ asset('images/ba2.jpg') }}"
             />
             <img
-              src="{{ asset('images/b3.jpg') }}"
+              src="{{ asset('images/ba3.jpg') }}"
             />
           </div>
         </div>
@@ -53,14 +53,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow4">
             <img
-              src="{{ asset('images/b6.jpg') }}"
+              src="{{ asset('images/ba6.jpg') }}"
               class="active"
             />
             <img
-              src="{{ asset('images/b5.jpg') }}"
+              src="{{ asset('images/ba5.jpg') }}"
             />
             <img
-              src="{{ asset('images/b4.jpg') }}"
+              src="{{ asset('images/ba4.jpg') }}"
             />
           </div>
         </div>
