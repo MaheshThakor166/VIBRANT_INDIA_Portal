@@ -7,6 +7,7 @@
      <x-banner />
      <x-topcategory />
      <x-trandingproduct  />
+     <x-blog />
 
 <x-script/>
 </body>
