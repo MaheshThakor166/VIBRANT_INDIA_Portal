@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    
     public function index(Request $request)
     {
         // Get the search input from the request
@@ -26,72 +25,58 @@ class UserController extends Controller
     }
     
     public function create()
-   {
-    return view('adminpanel.users.create'); // Adjust the view name as necessary
-   }
-
-   public function store(Request $request)
-{
-    // Validate the request data
-    $validatedData = $request->validate([
-        'username' => 'required|string|max:255|unique:users',
-        'email' => 'required|string|email|max:255|unique:users',
-        'password' => 'required|string|min:6',
-        'contact_no' => 'required|string|max:255',
-    ]);
-
-    // Create the user
-    $user = User::create([
-        'username' => $validatedData['username'],
-        'email' => $validatedData['email'],
-        'password' => Hash::make($validatedData['password']),
-        'contact_no' => $validatedData['contact_no'],
-    ]);
-
-    // Redirect back with a success message
-    return redirect()->route('userindex')->with('success', 'User created successfully.');
-}
-    public function edit($id)
     {
-    $user = User::findOrFail($id);
-    return view('adminpanel.users.edit', compact('user'));
-     }
+        return view('adminpanel.users.create'); // Adjust the view name as necessary
+    }
 
-
-     public function update(Request $request, $id)
-     {
-         $user = User::findOrFail($id);
- 
-         // Validate the request data
-         $request->validate([
-             'username' => 'required|string|max:255',
-             'email' => 'required|string|email|max:255',
-             'contact_no' => 'required|string|min:10|max:10',
+    public function store(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'username' => 'required|string|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
+            'contact_no' => 'required|string|max:255',
         ]);
- 
-         // Update the user with new data
-         $user->username = $request->input('username');
-         $user->email = $request->input('email');
-         $user->contact_no = $request->input('contact_no');
-        
-       
- 
-         $user->save(); // Save the updated user data
- 
-         return redirect()->route('userindex')->with('success', 'User updated successfully!');
-     }
 
-     public function destroy($id)
+        // Create the user
+        User::create([
+            'username' => $validatedData['username'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+            'contact_no' => $validatedData['contact_no'],
+        ]);
+
+        // Redirect back with a success message
+        return redirect()->route('users.index')->with('success', 'User created successfully.');
+    }
+
+    public function edit(User $user)
     {
-    // Find the user by ID
-    $user = User::findOrFail($id);
-    
-    // Delete the user
-    $user->delete();
+        return view('adminpanel.users.edit', compact('user'));
+    }
 
-    // Redirect back with a success message
-    return redirect()->route('userindex')->with('success', 'User deleted successfully.');
-   }
+    public function update(Request $request, User $user)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'contact_no' => 'required|string|min:10|max:10',
+        ]);
 
-    
+        // Update the user with new data
+        $user->update($validatedData);
+
+        return redirect()->route('users.index')->with('success', 'User updated successfully!');
+    }
+
+    public function destroy(User $user)
+    {
+        // Delete the user
+        $user->delete();
+
+        // Redirect back with a success message
+        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+    }
 }

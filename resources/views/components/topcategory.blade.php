@@ -1,4 +1,4 @@
-<section class="top-category section-margin">
+<section class="top-category section-margin" id="TopCategory">
 
     <div class="container">
         <div class="heading-section">

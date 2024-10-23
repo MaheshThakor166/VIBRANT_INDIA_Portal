@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ProductController;
+
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
@@ -27,22 +32,35 @@ Route::post('/login', [AuthController::class, 'loginsave'])->name('loginsave');
 
 Route::get('/home', [AuthController::class, 'home'])->name('home');
 
-Route::get('/admin', [AuthController::class, 'adminview'])->name('admin.view');
+
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users.index');
 // Route::get('/users', [UserController::class, 'index'])->name('userindex');
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('adminpanel.dashboard');
 })->name('dashboard');
 
-Route::get('/users', [UserController::class, 'index'])->name('userindex');
-Route::get('/users/create', [UserController::class, 'create'])->name('usercreate');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::resource('users', UserController::class);
 
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
 
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
 
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+
+Route::get('/admin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+
+// Route::group(['middleware' => 'auth.basic'], function () {
+//     Route::prefix('admin')->group(function () {
+//         Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+//         Route::get('/users', 'UserController@users')->name('admin.users');
+//     });
+// });

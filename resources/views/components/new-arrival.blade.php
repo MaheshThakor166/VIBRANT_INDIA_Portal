@@ -1,4 +1,4 @@
-<section class="section-margin">
+<section class="section-margin" id="NewArrival">
     <div class="container">
             <div class="heading-section">
                 <div class="main-heading">

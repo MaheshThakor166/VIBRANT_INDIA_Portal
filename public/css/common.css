@@ -3,6 +3,7 @@ body{
    padding:0;
    overflow-x: hidden !important;
    font-family: Arial, Helvetica, sans-serif;
+   background-color: #e3e6e6; 
 }
 /*common color*/
 :root{

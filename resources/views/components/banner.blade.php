@@ -5,14 +5,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow1">
             <img
-              src="https://cdn.hblfindia.com/images/adsimages/eltpjbke.webp"
+              src="{{ asset('images/b1.jpg') }}"
               class="active"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-1/tqii5ps1.webp"
+              src="{{ asset('images/b3.jpg') }}"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-1/umzzlgpr.webp"
+              src="{{ asset('images/b5.jpg') }}"
             />
           </div>
         </div>
@@ -21,14 +21,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow2">
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/hjpx3jiy.webp"
+              src="{{ asset('images/b2.jpg') }}"
               class="active"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/dvivjpa3.webp"
+              src="{{ asset('images/b4.jpg') }}"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/sypnkonl.webp"
+              src="{{ asset('images/b6.jpg') }}"
             />
           </div>
         </div>
@@ -37,14 +37,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow3">
             <img
-              src="https://cdn.hblfindia.com/images/adsimages/eltpjbke.webp"
+              src="{{ asset('images/b1.jpg') }}"
               class="active"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-1/tqii5ps1.webp"
+              src="{{ asset('images/b2.jpg') }}"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-1/umzzlgpr.webp"
+              src="{{ asset('images/b3.jpg') }}"
             />
           </div>
         </div>
@@ -53,14 +53,14 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 p-1">
           <div class="slideshow" id="slideshow4">
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/hjpx3jiy.webp"
+              src="{{ asset('images/b6.jpg') }}"
               class="active"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/dvivjpa3.webp"
+              src="{{ asset('images/b5.jpg') }}"
             />
             <img
-              src="https://cdn.hblfindia.com/home_page/banner-2/sypnkonl.webp"
+              src="{{ asset('images/b4.jpg') }}"
             />
           </div>
         </div>
