@@ -10,7 +10,7 @@
         <div class="d-lg-block d-md-block d-sm-none d-none">
         <div class="right-part d-sm-none d-md-block">
             <!--login-btn-->
-            <a href="#" class="primary-btn">Sign in</a>
+            <a href="{{route('login')}}" class="primary-btn">Sign in</a>
             <!--inqury btn-->
             <div class="inqiry-box">
                 <a href="#"

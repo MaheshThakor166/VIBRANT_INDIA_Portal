@@ -10,11 +10,26 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="register-box1">
                 <div class="register-header">Login</div>
-                <form class="mt-3" onsubmit="return validateForm()">
+
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
+                <form class="mt-3" method="POST" action="{{ route('loginsave') }}">
+                  @csrf
+
                   <div class="input-field mt-3">
-                    <span
-                      ><i class="fa-solid fa-envelope input-field-icon"></i
-                    ></span>
+                    <span>
+                      <i class="fa-solid fa-envelope input-field-icon"></i>
+                    </span>
                     <input
                       class="input-type-box"
                       type="email"
@@ -23,6 +38,9 @@
                       placeholder="Enter Your Email"
                     />
                   </div>
+                  @error('email')
+                  <span class="error-message">{{ $message }}</span>
+                  @enderror
                   <span class="error-message" id="emailError"></span>
 
                   <div class="input-field mt-3">
@@ -35,6 +53,9 @@
                       placeholder="Enter Your Password"
                     />
                   </div>
+                  @error('password')
+                  <span class="error-message">{{ $message }}</span>
+                  @enderror
                   <span class="error-message" id="passwordError"></span>
 
                   <div class="input-field mt-3">
@@ -47,7 +68,7 @@
                   </div>
                   <div class="mt-3">
                     <span class="account-text"> Don't have an account? </span>
-                    <a class="login-link" href="SignUp.html"> Sign Up </a>
+                    <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
                   </div>
                 </form>
               </div>
