@@ -66,7 +66,7 @@
   /* Blog List (Right) */
   .blog-list {
     flex: 1;
-    max-height: 400px;
+    max-height: 420px;
     overflow-y: auto;
     padding-left: 20px;
   }
@@ -75,7 +75,7 @@
     display: flex;
     align-items: center;
     background-color: white;
-    margin-bottom: 20px;
+    margin: 20px 10px;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -98,7 +98,7 @@
   }
 
   .blog-info .blog-title {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 5px;
     color: #333;
   }
@@ -125,4 +125,11 @@
 
   .blog-list::-webkit-scrollbar-thumb:hover {
     background-color: #ccc;
+  }
+  .blog-inner{
+    max-width: 300px;
+  }
+  .blog-inner img{
+    height: 100%;
+    width: 100%;
   }

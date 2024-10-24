@@ -309,5 +309,10 @@
         </div>
 
         </div>
+        <div class="popup-overlay" id="popup">
+            <span class="popup-close" id="popupClose">&times;</span>
+            <img id="popupImage" class="popup-content" />
+        </div>
+
     </div>
     </section>

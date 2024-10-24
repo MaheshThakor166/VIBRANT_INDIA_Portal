@@ -3,12 +3,13 @@
 <x-head/>
 <body>
     <x-header />
-     <x-footer />
      <x-banner />
      <x-topcategory />
-     <x-trandingproduct  />
      <x-newarrival />
+     <x-trandingproduct  />
      <x-blog />
+     <x-footer />
+
 
 <x-script/>
 </body>

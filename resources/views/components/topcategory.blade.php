@@ -1,5 +1,4 @@
 <section class="top-category section-margin">
-
     <div class="container">
         <div class="heading-section">
             <div class="main-heading">
@@ -17,8 +16,13 @@
                 <!-- Card 1 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container zoom" onmousemove="zoom(event)" >
-                            <img src="{{ asset('images/t1.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t1.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -35,7 +39,7 @@
                                 </span></h6>
                             <div class="d-flex justify-content-start mx-2">
                                 {{-- <div class="inqury-cheap"><a href="#">Inquiry</a></div> --}}
-                                <a href="#" class="cta">
+                                <a href="{{route('inquiryform')}}" class="cta">
                                     <span>Inquiry</span>
                                     {{-- <path d="M1,5 L11,5"></path>
                               <polyline points="8 1 12 5 8 9"></polyline> --}}
@@ -49,8 +53,13 @@
                 <!-- Card 2 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t2.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t2.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -80,8 +89,13 @@
                 <!-- Card 3 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t3.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t3.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -113,8 +127,13 @@
                 <!-- Card 4 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t5.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t5.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -146,8 +165,13 @@
                    <!-- Card 5 -->
                    <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t1.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t1.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -178,8 +202,13 @@
                 <!-- Card 6 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t2.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t2.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -209,8 +238,13 @@
                 <!-- Card 7 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t3.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t3.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -242,8 +276,13 @@
                 <!-- Card 8 -->
                 <div class="swiper-slide">
                     <div class="card-view">
-                        <div class="img-container">
-                            <img src="{{ asset('images/t5.jpg') }}" alt="company logo">
+                        <div class="image-container">
+                            <div class="thumbnail_container">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('images/t5.jpg') }}" class="product-image swiper-img"
+                                        alt="Product Image" onclick="openPopup(this)">
+                                </div>
+                            </div>
                         </div>
 
                         <p class="card-description">
@@ -277,5 +316,10 @@
             <div class="swiper-pagination"></div>
 
         </div>
+        <div class="popup-overlay" id="popup">
+            <span class="popup-close" id="popupClose">&times;</span>
+            <img id="popupImage" class="popup-content" />
+        </div>
+
     </div>
 </section>

@@ -1,0 +1,103 @@
+.footer-section {
+    background-color: #038887cc;
+    padding: 40px 0;
+  }
+  .footer-section-alldetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-section .footer-all-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 20px;
+    align-items: center;
+    height: 100%;
+  }
+  .footer-section .footer-all-details .footer-text-link {
+    border-right: 1px solid #bcbabaf7;
+    padding: 0px 18px;
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:var(--light-color);
+  }
+  .footer-section .footer-all-details .footer-text-link:nth-child(3) {
+    border: none;
+  }
+  .footer-section .footer-main-social {
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .footer-section .footer-social-icon {
+    text-align: center;
+  }
+
+  .footer-section .footer-social-icon:hover {
+    background-color: white;
+    text-align: center;
+    border-radius: 30px;
+  }
+  .footer-section .footer-social-icon .footer-icon {
+    height: 35px;
+    width: 35px;
+    border: 1px solid var(--light-color);
+    border-radius: 30px;
+    line-height: 33px;
+    color: var(--light-color);
+    transition: transform 0.5s;
+  }
+  .footer-section .footer-social-icon .footer-icon:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+      inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+      -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+      0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    transform: translateY(2px);
+  }
+  .fa-brands:hover {
+    transform: scale(0.9);
+  }
+  .footer-icon-link {
+    text-decoration: none;
+  }
+  .footer-icon-link:hover .fa-facebook-f {
+    color: #3b5998;
+  }
+
+  .footer-icon-link:hover .fa-linkedin-in {
+    color: #3b5998;
+  }
+
+  .footer-icon-link:hover .fa-twitter {
+    color: #00acee;
+  }
+
+  .footer-icon-link:hover .fa-instagram {
+    color: #f14843;
+  }
+
+  .footer-icon-link:hover .fa-youtube {
+    color: red;
+  }
+  .footer-section .footer-copyright-text {
+    color: white;
+    /* padding: 17px 0; */
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+@media screen and (max-width:575px) {
+    .footer-section .footer-main-social {
+        padding: 24px 0;
+    }
+}

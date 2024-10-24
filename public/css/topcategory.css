@@ -1,17 +1,22 @@
 .top-category{
     position: relative;
 }
-.top-category .container{
+/* .top-category .container{
     max-width:1350px;
-}
+} */
 .card-view{
    padding: 14px 8px;
-   margin: 40px 5px;
+   margin: 30px 5px;
    box-shadow: 2px 2px 2px 2px rgb(224, 221, 221);
    border-radius: 6px;
    position: relative;
 }
-
+@media screen and (max-width:575px) {
+    .card-view {
+        padding: 16px 12px;
+        margin: 20px 10px;
+    }
+}
 .card-view .img-container{
     position: relative;
    max-width: 100%;
@@ -21,10 +26,9 @@
     height: 100%;
     width: 100%;
 }
-/* .card-view .card-bottom{
-    margin-top: 10px;
-} */
-.card-view .card-description{
+.card-view .card-description,
+.card-view .arrival-card-description,
+.card-view .tranding-card-description{
     color: #000000e5;
     font-weight: 600;
     font-size: 15px;
@@ -164,7 +168,7 @@
   }
 
 
- 
+
   figure.zoom img {
     transition: opacity .5s;
     display: block;

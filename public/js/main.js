@@ -273,11 +273,38 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-function zoom(e){
-    var zoomer = e.currentTarget;
-    e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
-    e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
-    x = offsetX/zoomer.offsetWidth*100
-    y = offsetY/zoomer.offsetHeight*100
-    zoomer.style.backgroundPosition = x + '% ' + y + '%';
+// function zoom(e){
+//     var zoomer = e.currentTarget;
+//     e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+//     e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+//     x = offsetX/zoomer.offsetWidth*100
+//     y = offsetY/zoomer.offsetHeight*100
+//     zoomer.style.backgroundPosition = x + '% ' + y + '%';
+//   }
+
+
+const popup = document.getElementById('popup');
+const popupImage = document.getElementById('popupImage');
+const popupClose = document.getElementById('popupClose');
+
+// Add event listener to images inside swiper slides
+const swiperImages = document.querySelectorAll('.product-image');
+swiperImages.forEach((img) => {
+  img.addEventListener('click', (e) => {
+    popupImage.src = e.target.src;
+    popup.style.display = 'block'; // Show popup
+  });
+});
+
+// Close popup when "x" is clicked
+popupClose.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close popup when clicking outside the image
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
   }
+});
+

@@ -29,167 +29,53 @@
                             effectively communicate valuable insights on advertising and attract more visitors to your
                             website.
                         </p>
+                        <div class="logo-container mt-4">
+                            <a href="#">
+                                <img src="http://127.0.0.1:8000/images/company-logo.png" alt="company logo">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 mt-sm-5 mt-0">
                 <div class="blog-list">
                     <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/b1.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">12 July 2023</p>
-                            <h3 class="blog-title">A Guide to Cabinet Hardware Materials and Finishes</h3>
+                            <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
+                            </h3>
                             <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
-
                     <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/b2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
+                            <h3 class="blog-title">Hawkins Contura Black XT 5 Litre Inner Lid Pressure Cooker</h3>
                             <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
-
                     <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/b3.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
+                            <p class="blog-date">12 July 2023</p>
+                            <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
+                            </h3>
                             <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
                     <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
+                        <img src="{{ asset('images/b4.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
                         <div class="blog-info">
                             <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
+                            <h3 class="blog-title">Fableart Microwave Safe Stainless Steel Kitchen Food Storage</h3>
                             <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Luxury Bathtub Essentials for 2024</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <img src="https://via.placeholder.com/100x100" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">10 October 2023</p>
-                            <h3 class="blog-title">A Comprehensive Guide to Threaded Inserts</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
 
                     <!-- Add more blog items here -->
                 </div>
             </div>
-        </div>
 </section>
