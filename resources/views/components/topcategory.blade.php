@@ -1,16 +1,11 @@
+<!-- resources/views/components/topcategoryy.blade.php -->
 <section class="top-category section-margin" id="TopCategory">
     <div class="container">
         <div class="heading-section">
-            <div class="main-heading">
-                top Categories
-            </div>
-            <div class="btn-view primary-btn">
-                view More
-            </div>
+            <div class="main-heading">Top Categories</div>
+            <div class="btn-view primary-btn">View More</div>
         </div>
-
         <div class="swiper mySwiper mx-lg-2 mx-md-2 mx-sm-0">
-
             <div class="swiper-wrapper">
                 <!-- Card 1 -->
                 <div class="swiper-slide">
@@ -344,7 +339,6 @@
             </div>
             <br>
             <div class="swiper-pagination"></div>
-
         </div>
         {{-- <div class="popup-overlay" id="popup">
             <span class="popup-close" id="popupClose">&times;</span>

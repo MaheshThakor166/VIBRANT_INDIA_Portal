@@ -2,119 +2,135 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Subcategory;
 use App\Models\Product;
-use Illuminate\Support\Facades\Storage;
-
+use App\Models\Subcategory;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(Request $request)
-    {
-        // Get the search input from the request
-        $search = $request->input('search');
-        
-        // Query the products based on the search input, if it exists
-        $products = Product::when($search, function ($query, $search) {
-            return $query->where('name', 'like', "%{$search}%")
-                         ->orWhere('description', 'like', "%{$search}%")
-                         ->orWhere('price', 'like', "%{$search}%")
-                         ->orWhere('stock', 'like', "%{$search}%");
-        })->get();
-        
-        // Return the view with the filtered product data
-        return view('adminpanel.products.index', compact('products', 'search'));
-    }
     
-
-    public function create() {
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
-        return view('adminpanel.products.create', compact('categories', 'subcategories'));
-    }
-
-    public function store(Request $request) {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string', // Ensure description is required
-            'price' => 'required|numeric',
-            'stock' => 'required|integer',
-            'category_id' => 'required|exists:categories,id', // Validate category ID
-            'subcategory_id' => 'nullable|exists:subcategories,id', // Validate subcategory ID
-            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image file
-        ]);
-
-        // Handle the uploaded image
-        $imagePath = $request->file('image_url')->store('products', 'public'); // This saves the image correctly
-
-        // Create the product using the validated data
-        Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock,
-            'image_url' => $imagePath, // Store the path of the uploaded image
-            'category_id' => $request->category_id, // Use category ID
-            'subcategory_id' => $request->subcategory_id, // Use subcategory ID
-        ]);
-    
-        return redirect()->route('products.index')->with('success', 'Product added successfully!');
-    }
-    public function edit(Product $product)
+    public function create(Request $request)
     {
-        $categories = Category::all();
+       
         $subcategories = Subcategory::all();
-        return view('adminpanel.products.edit', compact('product', 'categories', 'subcategories'));
+        $categories = Category::all(); 
+        return view('adminpanel.products.create', compact('subcategories','categories'));
     }
 
-    public function update(Request $request, Product $product)
+   
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'price' => 'required|numeric',
-            'stock' => 'required|integer',
-            'category_id' => 'required|exists:categories,id',
-            'subcategory_id' => 'nullable|exists:subcategories,id',
-            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Image is optional on update
+            'subcategory_id' => 'required|exists:subcategories,id',
+            'category_type' => 'required|in:Top,Trending,New Arrival',
+            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'material' => 'nullable|string',
+            'size' => 'nullable|string',
         ]);
-
-        // Update the product
-        $product->name = $request->name;
-        $product->description = $request->description;
-        $product->price = $request->price;
-        $product->stock = $request->stock;
-        $product->category_id = $request->category_id;
-        $product->subcategory_id = $request->subcategory_id;
-
-        // Handle image update
+    
+        $imagePath = null;
+    
         if ($request->hasFile('image_url')) {
-            // Delete the old image if necessary
-            if ($product->image_url) {
-                Storage::disk('public')->delete($product->image_url);
-            }
-            // Store the new image
-            $product->image_url = $request->file('image_url')->store('products', 'public');
+            $imagePath = $request->file('image_url')->store('images', 'public');
         }
-
-        $product->save();
-
-        return redirect()->route('products.index')->with('success', 'Product updated successfully!');
+    
+        Product::create(array_merge($request->all(), ['image_url' => $imagePath]));
+    
+        return redirect()->route('products.index')->with('success', 'Product created successfully');
     }
 
-    public function destroy(Product $product)
+    // Show all products
+    public function index()
     {
-        // Delete the product's image from storage
-        if ($product->image_url) {
-            Storage::disk('public')->delete($product->image_url);
+        $products = Product::all();
+        $topProducts = Product::where('category_type', 'Top')->get();
+        return view('adminpanel.products.index', compact('products','topProducts'));
+    }
+    public function userHomePage()
+    {
+          // Fetch products for the top category (adjust the query as needed)
+          $topCategoryProducts = Product::where('category_type', 'Top')->get();;
+          if ($topCategoryProducts->isEmpty()) {
+            $topCategoryProducts = collect(); // Return an empty collection if no products are found
         }
 
-        // Delete the product
+    
+          // Pass the products to the home view
+          return view('layouts.welcome', compact('topCategoryProducts'));
+    }
+
+   
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+    $categories = Category::all(); // Retrieve all categories
+    $subcategories = Subcategory::where('category_id', $product->category_id)->get(); // Retrieve related subcategories
+
+    return view('adminpanel.products.edit', compact('product', 'categories', 'subcategories'));
+    }
+    public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+       
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'subcategory_id' => 'required|exists:subcategories,id',
+            'category_type' => 'required|in:Top,Trending,New Arrival',
+            'material' => 'nullable|string',
+            'size' => 'nullable|string',
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240', // Optional image validation
+        ]);
+    
+        // Check if a new image is uploaded
+        if ($request->hasFile('image_url')) {
+            $imagePath = $request->file('image_url')->store('images', 'public');
+            $product->update(array_merge($request->all(), ['image_url' => $imagePath]));
+        } else {
+            $product->update($request->except('image_url'));
+        }
+    
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
+         
+    }
+
+    // Delete a product
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
+
+    public function getSubcategories($categoryId)
+{
+    $subcategories = Subcategory::where('category_id', $categoryId)->get();
+
+    return response()->json(['subcategories' => $subcategories]);
+}
+
+
+
+// public function showTopCategories()
+// {
+//     $topProducts = Product::where('category_type', 'Top')->get();
+//     return view('components.topcategory', compact('topProducts'));
+// }
+
+
+public function showTopCategories()
+{
+    $topProducts = Product::where('category_type', 'Top')->get();
+    if ($topProducts->isEmpty()) {
+        return view('components.topcategory', ['topProducts' => []]); // or handle accordingly
+    }
+    return view('components.topcategory', compact('topProducts'));
+}
+
 
 }

@@ -9,13 +9,27 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'stock', 'image_url', 'category_id', 'subcategory_id'];
+    // Specify the fields that can be mass-assigned
+    protected $fillable = [
+        'name',
+        'description',
+       'material', 
+        'size'  ,
+        'image_url',
+        'subcategory_id',
+        'category_type'
+        
+    ];
 
-    public function category() {
-        return $this->belongsTo(Category::class);
+    // Relationship to Subcategory
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class);
     }
 
-    public function subcategory() {
-        return $this->belongsTo(Subcategory::class);
+    // Relationship to Category through Subcategory
+    public function category()
+    {
+        return $this->hasOneThrough(Category::class, Subcategory::class, 'id', 'id', 'subcategory_id', 'category_id');
     }
 }

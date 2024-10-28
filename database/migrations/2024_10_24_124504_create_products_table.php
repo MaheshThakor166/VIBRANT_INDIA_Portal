@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('subcategory_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->text('description');
             $table->decimal('price', 10, 2);
-            $table->integer('stock');
-            $table->string('image_url')->nullable();
+            $table->integer('stock')->default(0); // Stock column added
+            $table->string('image')->nullable(); // Images column added
+            $table->foreignId('subcategory_id')->constrained()->onDelete('cascade');
+            $table->enum('category_type', ['Top', 'Trending', 'New Arrival']);
             $table->timestamps();
         });
     }

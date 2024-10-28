@@ -8,9 +8,10 @@
         <aside class="sidebar">
             <div class="logo">
                 <img src="{{ asset('images/mobile-logo.png') }}" alt="Logo" class="logo-img">
+
             </div>
             <nav>
-                    <a href="#" class="active"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="#" class="active"><i class="fa-solid fa-house"></i>Dashboardcccccc</a>
                     <a href="{{ route('userindex') }}"><i class="fa-solid fa-user"></i> Users</a>
 
                     <a href="#"><i class="fa-solid  fa-shopping-cart"></i> Orders</a>

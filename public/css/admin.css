@@ -5,15 +5,16 @@ body {
 
 .dashboard-container {
     display: flex;
-    
+
 }
 
 .sidebar {
     background-color: #343480;
     color: #fff;
     width: 250px;
-    height: 120vh;
-   
+    position: fixed;
+    top:0;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
@@ -47,7 +48,8 @@ body {
 .main-content {
     flex: 1;
     background: #546093;
-    padding: 20px;
+    padding: 20px 30px;
+    margin-left: 242px;
 }
 
 .topbar {

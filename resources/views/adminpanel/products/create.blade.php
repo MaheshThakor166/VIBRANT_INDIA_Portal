@@ -1,7 +1,7 @@
 @extends('adminpanel.adminlayout')
 
 @section('content')
-    <h1 class="form-title">Add Product</h1>
+    <h1 class="form-title">Create Product</h1>
 
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -16,7 +16,7 @@
             </ul>
         </div>
     @endif
-
+  
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="product-form">
         @csrf
 
@@ -31,16 +31,25 @@
         </div>
 
         <div class="form-row">
-            <label for="price">Price:</label>
-            <input type="number" name="price" step="0.01" value="{{ old('price') }}" required>
+            <label for="Material">Material:</label>
+            <input type="text" name="material" step="0.01" value="{{ old('material') }}" required>
         </div>
 
         <div class="form-row">
-            <label for="stock">Stock:</label>
-            <input type="number" name="stock" value="{{ old('stock') }}" required>
+            <label for="size">Size:</label>
+            <input type="text" name="size" value="{{ old('stock') }}" required>
         </div>
-
         <div class="form-row">
+            <label for="category_id">Category:</label>
+            <select name="category_id" id="category_id" required>
+                <option value="" disabled selected>Select a Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
+        {{-- <div class="form-row">
             <label for="category_id">Category:</label>
             <select name="category_id" id="category_id" required>
                 <option value="">Select a Category</option>
@@ -50,19 +59,32 @@
                     </option>
                 @endforeach
             </select>
-        </div>
-
+        </div> --}}
         <div class="form-row">
-            <label for="subcategory_id">Subcategory:</label>
-            <select name="subcategory_id" id="subcategory_id">
-                <option value="">Select a Subcategory</option>
-                @foreach($subcategories as $subcategory)
-                    <option value="{{ $subcategory->id }}" {{ old('subcategory_id') == $subcategory->id ? 'selected' : '' }}>
-                        {{ $subcategory->name }}
-                    </option>
-                @endforeach
+            <label>Category Type:</label>
+       
+            <select name="category_type" required>
+                <option value="Top">Top</option>
+                <option value="Trending">Trending</option>
+                <option value="New Arrival">New Arrival</option>
             </select>
         </div>
+        <div class="form-row">
+            <label for="subcategory_id">Subcategory:</label>
+            <select name="subcategory_id" id="subcategory_id" required>
+                <option value="" disabled selected>Select a Subcategory</option>
+            </select>
+        </div>
+        
+        {{-- <div class="form-row">
+            <label>Subcategory:</label>
+            <select name="subcategory_id" required>
+                @foreach ($subcategories as $subcategory)
+                    <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                @endforeach
+            </select>
+         
+        </div> --}}
 
         <div class="form-row">
             <label for="image_url">Image:</label>
@@ -73,6 +95,13 @@
             <button type="submit" class="btn-submit">Add Product</button>
         </div>
     </form>
+
+ 
+
+    <a href="{{ route('products.index') }}">Back to Product List</a>
+
+
+
 
     <style>
         .form-title {
@@ -161,4 +190,29 @@
             padding-left: 20px;
         }
     </style>
+
+<script>
+    document.getElementById('category_id').addEventListener('change', function () {
+        let categoryId = this.value;
+
+        fetch(`/get-subcategories/${categoryId}`)
+            .then(response => response.json())
+            .then(data => {
+                let subcategorySelect = document.getElementById('subcategory_id');
+                subcategorySelect.innerHTML = '<option value="">Select a Subcategory</option>'; // Reset options
+
+                data.subcategories.forEach(subcategory => {
+                    let option = document.createElement('option');
+                    option.value = subcategory.id;
+                    option.textContent = subcategory.name;
+                    subcategorySelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
 @endsection
+
+
+
