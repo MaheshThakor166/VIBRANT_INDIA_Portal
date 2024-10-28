@@ -3,33 +3,48 @@
 @section('content')
     <h1 class="form-title">Edit Product</h1>
 
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="product-form">
         @csrf
         @method('PUT')
 
         <div class="form-row">
             <label for="name">Product Name:</label>
-            <input type="text" name="name" id="name" value="{{ old('name', $product->name) }}" required>
+            <input type="text" name="name" value="{{ old('name', $product->name) }}" required>
         </div>
 
         <div class="form-row">
             <label for="description">Description:</label>
-            <textarea name="description" id="description" required>{{ old('description', $product->description) }}</textarea>
+            <textarea name="description" required>{{ old('description', $product->description) }}</textarea>
         </div>
 
         <div class="form-row">
-            <label for="price">Price:</label>
-            <input type="number" name="price" id="price" value="{{ old('price', $product->price) }}" required>
+            <label for="material">Material:</label>
+            <input type="text" name="material" step="0.01" value="{{ old('material', $product->material) }}" required>
         </div>
 
         <div class="form-row">
-            <label for="stock">Stock:</label>
-            <input type="number" name="stock" id="stock" value="{{ old('stock', $product->stock) }}" required>
+            <label for="size">Size:</label>
+            <input type="text" name="size" value="{{ old('size', $product->size) }}" required>
         </div>
 
         <div class="form-row">
             <label for="category_id">Category:</label>
             <select name="category_id" id="category_id" required>
+                <option value="" disabled>Select a Category</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
                         {{ $category->name }}
@@ -39,9 +54,18 @@
         </div>
 
         <div class="form-row">
+            <label>Category Type:</label>
+            <select name="category_type" required>
+                <option value="Top" {{ $product->category_type == 'Top' ? 'selected' : '' }}>Top</option>
+                <option value="Trending" {{ $product->category_type == 'Trending' ? 'selected' : '' }}>Trending</option>
+                <option value="New Arrival" {{ $product->category_type == 'New Arrival' ? 'selected' : '' }}>New Arrival</option>
+            </select>
+        </div>
+
+        <div class="form-row">
             <label for="subcategory_id">Subcategory:</label>
-            <select name="subcategory_id" id="subcategory_id">
-                <option value="">Select Subcategory</option>
+            <select name="subcategory_id" id="subcategory_id" required>
+                <option value="">Select a Subcategory</option>
                 @foreach($subcategories as $subcategory)
                     <option value="{{ $subcategory->id }}" {{ $product->subcategory_id == $subcategory->id ? 'selected' : '' }}>
                         {{ $subcategory->name }}
@@ -52,8 +76,11 @@
 
         <div class="form-row">
             <label for="image_url">Image:</label>
-            <input type="file" name="image_url" id="image_url">
-            <p class="current-image">Current Image: <img src="{{ asset('storage/' . $product->image_url) }}" alt="{{ $product->name }}" style="width: 150px; border-radius: 5px;"></p>
+            <input type="file" name="image_url" accept="image/*">
+            @if($product->image_url)
+                <small>Current Image:</small>
+                <img src="{{ asset('storage/' . $product->image_url) }}" alt="{{ $product->name }}" style="width: 100px; height: auto;">
+            @endif
         </div>
 
         <div class="form-row">
@@ -61,7 +88,10 @@
         </div>
     </form>
 
-    <style>
+    <a href="{{ route('products.index') }}">Back to Product List</a>
+
+
+       <style>
         .form-title {
             font-size: 24px;
             font-weight: bold;
@@ -109,12 +139,6 @@
             padding: 5px;
         }
 
-        .current-image {
-            margin-left: 160px;
-            font-size: 14px;
-            color: #555;
-        }
-
         .btn-submit {
             background-color: #28a745; /* Green for success */
             color: #fff;
@@ -130,5 +154,50 @@
         .btn-submit:hover {
             background-color: #218838;
         }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert ul {
+            margin: 0;
+            padding-left: 20px;
+        }
     </style>
+ 
+
+    <script>
+        document.getElementById('category_id').addEventListener('change', function () {
+            let categoryId = this.value;
+
+            fetch(`/get-subcategories/${categoryId}`)
+                .then(response => response.json())
+                .then(data => {
+                    let subcategorySelect = document.getElementById('subcategory_id');
+                    subcategorySelect.innerHTML = '<option value="">Select a Subcategory</option>';
+
+                    data.subcategories.forEach(subcategory => {
+                        let option = document.createElement('option');
+                        option.value = subcategory.id;
+                        option.textContent = subcategory.name;
+                        subcategorySelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 @endsection

@@ -5,8 +5,8 @@
     <x-header />
      <x-footer />
      <x-banner />
-     <x-topcategory />
-     <x-trandingproduct  />
+     <x-topcategoryy :topCategoryProducts="$topCategoryProducts" />
+     <x-trandingproduct   />
      <x-newarrival />
      <x-blog />
 

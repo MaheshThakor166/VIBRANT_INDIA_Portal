@@ -7,7 +7,7 @@
         </div>
         <div class="swiper mySwiper mx-lg-2 mx-md-2 mx-sm-0">
             <div class="swiper-wrapper">
-                @if($topCategoryProducts && is_iterable($topCategoryProducts))
+                @if($topCategoryProducts && $topCategoryProducts->isNotEmpty())
                     @foreach($topCategoryProducts as $product)
                         <div class="swiper-slide">
                             <div class="card-view">
@@ -39,7 +39,7 @@
                         </div>
                     @endforeach
                 @else
-                    <p>No top products available.</p>
+                    <p>No top category products available.</p>
                 @endif
             </div>
             <br>
