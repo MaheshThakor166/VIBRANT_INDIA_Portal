@@ -28,7 +28,7 @@
                     </p>
                     </div>
                     <div class="card-bottom">
-                        <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Stainless Steel Houseware</span></h6>
+                           <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Stainless Steel Houseware</span></h6>
 
                         <h6 class="arrival-product-name"><span class="title">Product: </span><span
                                 class="arrival-pro-name">Serving Bowl</span></h6>

@@ -27,7 +27,7 @@
     </div>
     </section>
 
-    <div class="header-bottom">
+    <div class="header-bottom header-scroll">
         <button class="menu-btn d-lg-none d-sm-block d-md-none" id="menu-btn">
             <i class="fa-solid fa-bars"></i>
         </button>

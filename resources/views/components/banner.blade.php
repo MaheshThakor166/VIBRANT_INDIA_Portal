@@ -1,4 +1,4 @@
-<section class="banner-section mx-lg-4 mx-sm-2 mx-1 mt-2">
+<section class="banner-section mx-lg-4 mx-sm-2 mx-1 mt-3">
   <div class="container-fluid">
       <div class="row">
         <!-- Column 1 -->

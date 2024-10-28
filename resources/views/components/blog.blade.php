@@ -38,7 +38,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-5 mt-sm-5 mt-0">
+            <div class="col-lg-5 mt-sm-5 mt-lg-0 mt-0">
                 <div class="blog-list">
                     <div class="blog-item">
                         <img src="{{ asset('images/ba2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">

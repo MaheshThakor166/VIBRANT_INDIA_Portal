@@ -305,3 +305,24 @@ input[type="text"]::-webkit-search-cancel-button {
     margin-top: 5px;
     text-decoration: underline;
   }
+
+
+
+
+  .card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0); /* Ensure it's invisible */
+   z-index: 99;
+}
+
+.bottom-btn,
+.cta{
+    position: relative;
+    z-index:999;
+}

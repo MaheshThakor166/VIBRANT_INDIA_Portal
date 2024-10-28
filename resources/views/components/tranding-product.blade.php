@@ -12,6 +12,7 @@
         <div class="row g-1">
             {{-- card 1 --}}
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+
                 <div class="card-view">
                     <div class="image-container">
                         <div class="thumbnail_container">
@@ -21,9 +22,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tranding-card-description">
+                    <div class="text-wrapper">
+                    <p class="tranding-card-description content-txt">
                         Angelware Plastic Air Tight Modular Fridge Storage Containe
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="tranding-product-name"><span class="title">Category: </span><span
                                 class="tranding-pro-name">Plasticware</span></h6>
@@ -58,9 +61,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tranding-card-description">
+                    <div class="text-wrapper">
+                    <p class="tranding-card-description content-txt">
                         Bottom Steamer/Modak/Momo Maker With Glass Lid
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="tranding-product-name"><span class="title">Category: </span><span
                                 class="tranding-pro-name">Houseware</span></h6>
@@ -92,9 +97,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tranding-card-description">
+                    <div class="text-wrapper">
+                    <p class="tranding-card-description content-txt">
                         Bottom Steamer/Modak/Momo Maker With Glass Lid
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="tranding-product-name"><span class="title">Category: </span><span
                                 class="tranding-pro-name">Houseware</span></h6>
@@ -126,9 +133,11 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tranding-card-description">
+                    <div class="text-wrapper">
+                    <p class="tranding-card-description content-txt">
                         Outdoor Dishes Set, Tableware Set of 17Pcs Food-Grade
                     </p>
+                    </div>
                     <div class="card-bottom">
                         <h6 class="tranding-product-name"><span class="title">Category: </span><span
                                 class="tranding-pro-name">Table ware</span></h6>

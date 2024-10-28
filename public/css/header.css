@@ -47,16 +47,6 @@ header .inqiry-box .inqury-txt{
     color: var(--primary-color);
     margin-left: 5px;
 }
-header .nav-container{
-    /* display: flex;
-    width: 100%;
-    padding: 10px 10px 10px 50px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 100px;
-    background-color: white;
-    box-shadow: 0 0 45px 0 var(--shadow); */
-}
 header .header-bottom .nav-container{
     display: flex;
     max-width: 1040px;
@@ -318,4 +308,23 @@ header .nav-container .nav-view .nav-item {
     header .header-bottom {
         padding: 10px 10px;
     }
+}
+
+.fix-postion.header-bottom {
+    transition: 0.5s all ease-in-out;
+    position: fixed !important;
+    top: 7px;
+    left: 0;
+    width: 100%;
+    z-index: 999999999999;
+  }
+  .fix-postion.header-bottom .nav-container .nav-view   {
+  background: rgba(255, 255, 255, .8);
+  border-radius: 50px;
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow:2px 4px 5px 0px #666666a3;
+}
+.fix-postion.header-bottom .nav-container {
+    display: flex;
+    max-width: 1352px;
 }

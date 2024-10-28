@@ -60,6 +60,10 @@ Route::get('/inqury', function () {
     return view('inquiryform');
 })->name('inquiryform');
 
+Route::get('/productDetails', function () {
+    return view('productdetails');
+})->name('productdetails');
+
 // Route::group(['middleware' => 'auth.basic'], function () {
 //     Route::prefix('admin')->group(function () {
 //         Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');

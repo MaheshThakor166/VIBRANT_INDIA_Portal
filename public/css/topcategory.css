@@ -169,6 +169,8 @@
 
  .card-view .text-wrapper{
     margin-top: 15px;
+    position: relative;
+    z-index: 999999;
  }
 
   figure.zoom img {

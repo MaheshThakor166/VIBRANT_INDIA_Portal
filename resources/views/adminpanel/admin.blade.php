@@ -8,7 +8,6 @@
         <aside class="sidebar">
             <div class="logo">
                 <img src="{{ asset('images/mobile-logo.png') }}" alt="Logo" class="logo-img">
-
             </div>
             <nav>
                     <a href="#" class="active"><i class="fa-solid fa-house"></i>Dashboard</a>
@@ -22,13 +21,13 @@
         </aside>
 
         <main class="main-content">
-       
+
 
             <section class="dashboard-metrics">
                 <div class="card">
                     <p>Total User</p>
                     <h3>125</h3>
-                    
+
                 </div>
                 <div class="card">
                     <p>Total Product</p>
