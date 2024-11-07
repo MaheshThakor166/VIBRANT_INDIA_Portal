@@ -309,7 +309,6 @@ popup.addEventListener('click', (e) => {
 
 
     /*read more add*/
-
     document.addEventListener("DOMContentLoaded", function () {
         // Set a character limit for when to add "Read More"
         var charLimit = 70; // Minimum character limit to trigger "Read More"

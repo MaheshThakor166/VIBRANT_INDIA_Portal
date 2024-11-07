@@ -66,6 +66,10 @@ Route::get('/productDetails', function () {
     return view('productdetails');
 })->name('productdetails');
 
+Route::get('/blogdetails', function () {
+    return view('blogsection');
+})->name('blogsection');
+
 // Route::group(['middleware' => 'auth.basic'], function () {
 //     Route::prefix('admin')->group(function () {
 //         Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');

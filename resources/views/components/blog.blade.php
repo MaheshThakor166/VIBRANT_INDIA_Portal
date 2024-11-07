@@ -54,7 +54,7 @@
                         <div class="blog-info">
                             <p class="blog-date">19 September 2023</p>
                             <h3 class="blog-title">Hawkins Contura Black XT 5 Litre Inner Lid Pressure Cooker</h3>
-                            <a href="#" class="read-more">Read More</a>
+                            <a href="{{ route('blogsection') }}" class="read-more">Read More</a>
                         </div>
                     </div>
                     <div class="blog-item">
