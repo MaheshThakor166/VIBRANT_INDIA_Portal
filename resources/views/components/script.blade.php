@@ -18,3 +18,6 @@
 
 <!-- Main JS (your custom script file) -->
 <script src="{{ asset('js/zooming.js') }}"></script>
+
+<!--Top to bottom (your custom script file) -->
+<script src="{{ asset('js/topbottom.js') }}"></script>

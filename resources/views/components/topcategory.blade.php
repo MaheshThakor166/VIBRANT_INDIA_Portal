@@ -99,12 +99,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-wrapper">
-                            <p class="card-description content-txt">
-                                Larah by Borosil Luna Silk Series Opalware Dinner Set | 35 Pieces for Family of 6 |
-                                Microwave & Dishwasher Safe
-                            </p>
-                        </div>
+                            <div class="text-wrapper">
+                                <p class="card-description content-txt">
+                                    Larah by Borosil Luna Silk Series Opalware Dinner Set | 35 Pieces for Family of 6 |
+                                    Microwave & Dishwasher Safe
+                                </p>
+                            </div>
                         <div class="card-bottom">
                             <h6 class="product-name"><span class="title">Category: </span><span class="pro-name">Table
                                     Ware</span></h6>
