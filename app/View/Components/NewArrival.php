@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class NewArrival extends Component
 {
+    public $newArrivalCategoryProducts;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($newArrivalCategoryProducts = null)
     {
-        //
+        $this->newArrivalCategoryProducts = $newArrivalCategoryProducts;
     }
 
     /**

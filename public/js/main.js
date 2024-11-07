@@ -307,102 +307,23 @@ popup.addEventListener('click', (e) => {
   }
 });
 
+function toggleReadMore(productId) {
+    var description = document.getElementById('description-' + productId);
+    var moreText = description.querySelector('.more-text');
+    var readMoreBtn = description.nextElementSibling; // Get the "Read More" link
 
-    /*read more add*/
+    // Toggle the visibility of the "more-text" and update the button text
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline"; // Show the rest of the description
+        readMoreBtn.textContent = "Read Less"; // Change button text to "Read Less"
+    } else {
+        moreText.style.display = "none"; // Hide the extra text
+        readMoreBtn.textContent = "Read More"; // Change button text to "Read More"
+    }
+}
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Set a character limit for when to add "Read More"
-        var charLimit = 70; // Minimum character limit to trigger "Read More"
-        var minVisibleChar = 33; // Maximum character limit to avoid "Read More"
 
-        // Get all text wrappers
-        var textWrappers = document.querySelectorAll('.text-wrapper');
 
-        textWrappers.forEach(function (wrapper) {
-            var content = wrapper.querySelector(".content-txt").innerHTML;
-
-            // Check if the content exceeds the character limit
-            if (content.length > charLimit) {
-                // Split the content into two parts: visible and hidden based on character count
-                var visibleText = content.slice(0, charLimit); // First 35 characters
-                var hiddenText = content.slice(charLimit); // Remaining characters
-
-                // Create the structure: visible text + dots + hidden text + "Read More" link
-                var newHtml = `
-                    <span class="visible-text">${visibleText}</span>
-                    <span class="dots">...</span>
-                    <span class="full-text" style="display:none;">${hiddenText}</span>
-                    <a href="javascript:void(0);" class="readmore-btn">Read more</a>
-                `;
-
-                wrapper.innerHTML = newHtml; // Replace the original content with the new structured content
-
-                var readMoreBtn = wrapper.querySelector(".readmore-btn");
-                var fullText = wrapper.querySelector(".full-text");
-                var dots = wrapper.querySelector(".dots");
-
-                // Toggle between showing and hiding the extra content
-                readMoreBtn.addEventListener("click", function () {
-                    if (fullText.style.display === "none" || fullText.style.display === "") {
-                        fullText.style.display = "inline"; // Show the full text
-                        dots.style.display = "none"; // Hide the dots
-                        readMoreBtn.innerHTML = "Read less";
-                    } else {
-                        fullText.style.display = "none"; // Hide the full text
-                        dots.style.display = "inline"; // Show the dots
-                        readMoreBtn.innerHTML = "Read more";
-                    }
-                });
-            } else if (content.length > minVisibleChar) {
-                // If content is between 33 and 35 characters, show it fully without "Read More"
-                wrapper.innerHTML = content; // Show the full text without any button
-            } else {
-                // If content is 33 characters or fewer, show it fully without "Read More"
-                wrapper.innerHTML = content; // Show the full text without any button
-            }
-        });
-    });
-
-// let scrollTimeout;
-
-//         window.addEventListener("scroll", function () {
-//           clearTimeout(scrollTimeout); // Clear previous timeout
-//           scrollTimeout = setTimeout(function () {
-//             var fullTexts = document.querySelectorAll('.full-text');
-//             var dots = document.querySelectorAll('.dots');
-//             var buttons = document.querySelectorAll('.readmore-btn');
-
-//             fullTexts.forEach(function (text) {
-//               text.style.display = "none";
-//             });
-
-//             dots.forEach(function (dot) {
-//               dot.style.display = "inline";
-//             });
-
-//             buttons.forEach(function (button) {
-//               button.textContent = "Read more";
-//             });
-//           }, 200);
-//         });
-
-// window.addEventListener("scroll", function () {
-//     var fullTexts = document.querySelectorAll('.full-text');
-//     var dots = document.querySelectorAll('.dots');
-//     var buttons = document.querySelectorAll('.readmore-btn');
-
-//     fullTexts.forEach(function (text) {
-//       text.style.display = "none";
-//     });
-
-//     dots.forEach(function (dot) {
-//       dot.style.display = "inline";
-//     });
-
-//     buttons.forEach(function (button) {
-//       button.textContent = "Read more";
-//     });
-//   });
 
 
 
