@@ -9,11 +9,18 @@ use Illuminate\View\Component;
 class TrandingProduct extends Component
 {
     /**
-     * Create a new component instance.
+     * The trending products to display.
      */
-    public function __construct()
+    public $trendingProducts;
+
+    /**
+     * Create a new component instance.
+     *
+     * @param mixed $trendingProducts
+     */
+    public function __construct($trendingProducts = null)
     {
-        //
+        $this->trendingProducts = $trendingProducts;
     }
 
     /**

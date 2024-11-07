@@ -44,12 +44,7 @@
                    </div>
                  </div>
 
-                 <!-- Action Buttons -->
-                 <!-- <div class="buttons">
-                   <a href="#" class="button">Product Inquiry</a>
-                   <a href="#" class="button">Compare Product</a>
-                   <button class="button-heart">♥</button>
-                 </div> -->
+              
                </div>
              </div>
            </div>

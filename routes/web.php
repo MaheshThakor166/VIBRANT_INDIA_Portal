@@ -61,6 +61,7 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.
 Route::get('/inqury', function () {
     return view('inquiryform');
 })->name('inquiryform');
+Route::get('/inquiry/{product}', [ProductController::class, 'inquiry'])->name('inquiry');
 
 Route::get('/productDetails', function () {
     return view('productdetails');

@@ -8,12 +8,12 @@ use Illuminate\View\Component;
 
 class Topcategoryy extends Component
 {
-    public $topCategoryProducts; // Change this to match the data you're passing
+    public $topCategoryProducts;
 
     /**
      * Create a new component instance.
      *
-     * @param array|null $topCategoryProducts
+     * @param array|null $topProducts
      */
     public function __construct($topCategoryProducts = null)
     {
@@ -25,6 +25,6 @@ class Topcategoryy extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.topcategoryy'); // Make sure this view name is correct
+        return view('components.topcategoryy');
     }
 }

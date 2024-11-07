@@ -69,26 +69,32 @@
                 <option value="New Arrival">New Arrival</option>
             </select>
         </div>
-        <div class="form-row">
+      
+        {{-- <div class="form-row">
             <label for="subcategory_id">Subcategory:</label>
             <select name="subcategory_id" id="subcategory_id" required>
-                <option value="" disabled selected>Select a Subcategory</option>
+                <option value="">Select a Subcategory</option>
+                @foreach($subcategories as $subcategory)
+                    <option value="{{ $subcategory->id }}" {{ $product->subcategory_id == $subcategory->id ? 'selected' : '' }}>
+                        {{ $subcategory->name }}
+                    </option>
+                @endforeach
             </select>
-        </div>
-        
-        {{-- <div class="form-row">
+        </div> --}}
+        <div class="form-row">
             <label>Subcategory:</label>
             <select name="subcategory_id" required>
+                <option value="" disabled selected>Select a  Sub Category</option>
                 @foreach ($subcategories as $subcategory)
                     <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                 @endforeach
             </select>
          
-        </div> --}}
+        </div>
 
         <div class="form-row">
             <label for="image_url">Image:</label>
-            <input type="file" name="image_url" accept="image/*" required>
+            <input type="file" name="image_url"  required>
         </div>
 
         <div class="form-row">
