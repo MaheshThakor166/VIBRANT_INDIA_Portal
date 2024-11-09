@@ -52,10 +52,6 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit'); // Edit a product
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update'); // Update a product
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy'); // Delete a product
-
-
-
-
 Route::get('/admin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 Route::get('/inqury', function () {
@@ -70,6 +66,10 @@ Route::get('/productDetails', function () {
 Route::get('/blogdetails', function () {
     return view('blogsection');
 })->name('blogsection');
+
+Route::get('/innertopcategory', function () {
+    return view('innertopcategory');
+})->name('innertopcategory');
 
 // Route::group(['middleware' => 'auth.basic'], function () {
 //     Route::prefix('admin')->group(function () {

@@ -4,10 +4,12 @@
     <x-head/>
 </head>
 <body>
+    <div class="form-outer">
+    <section class="form-container">
     <div class="container mt-5">
         <div class="main-box">
           <div class="row g-0 m-0">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
               <div class="register-box1">
                 <div class="register-header">Login</div>
 
@@ -27,9 +29,9 @@
                   @csrf
 
                   <div class="input-field mt-3">
-                    <span>
+                    {{-- <span>
                       <i class="fa-solid fa-envelope input-field-icon"></i>
-                    </span>
+                    </span> --}}
                     <input
                       class="input-type-box"
                       type="email"
@@ -37,6 +39,7 @@
                       name="email"
                       placeholder="Enter Your Email"
                     />
+                    <i class="fa-solid fa-envelope input-field-icon"></i>
                   </div>
                   @error('email')
                   <span class="error-message">{{ $message }}</span>
@@ -44,7 +47,7 @@
                   <span class="error-message" id="emailError"></span>
 
                   <div class="input-field mt-3">
-                    <span><i class="fa-solid fa-lock input-field-icon"></i></span>
+                    {{-- <span><i class="fa-solid fa-lock input-field-icon"></i></span> --}}
                     <input
                       class="input-type-box"
                       type="password"
@@ -52,6 +55,8 @@
                       name="password"
                       placeholder="Enter Your Password"
                     />
+                    <span><i class="fa-solid fa-lock input-field-icon"></i></span>
+
                   </div>
                   @error('password')
                   <span class="error-message">{{ $message }}</span>
@@ -66,23 +71,22 @@
                       class="secondary-btn"
                     />
                   </div>
-                  <div class="mt-3">
+                  {{-- <div class="mt-3">
                     <span class="account-text"> Don't have an account? </span>
                     <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
-                  </div>
+                  </div> --}}
                 </form>
               </div>
             </div>
 
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-0" style="overflow: hidden;">
               <div class="register-box2">
                 <div class="register-site-image">
-                  <img
-                    class="register-image"
-                    src="https://st2.depositphotos.com/2931363/9744/i/450/depositphotos_97445546-stock-photo-handsome-working-with-laptop-in.jpg"
-                    alt="Registration"
-                  />
-                </div>
+                         <h2>Hello, Welcome!</h2>
+                         <p class="ac-txt">Don't have an account?</p>
+                         <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
+                        </div>
+
               </div>
             </div>
           </div>
@@ -92,5 +96,7 @@
       <div>
         <x-script/>
     </div>
+    </section>
+</div>
 </body>
 </html>

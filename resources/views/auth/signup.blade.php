@@ -4,6 +4,9 @@
     <x-head/>
 </head>
 <body>
+    <div class="form-outer">
+        <section class="form-container">
+
     <div class="container mt-5">
         <div class="main-box">
           <div class="row g-0 m-0">
@@ -87,10 +90,10 @@
                       class="secondary-btn"
                     />
                   </div>
-                  <div class="mt-3">
+                  {{-- <div class="mt-3">
                     <span class="account-text">Already have an account? </span>
                     <a class="login-link" href="{{route('login')}}"> Login </a>
-                  </div>
+                  </div> --}}
                 </form>
               </div>
             </div>
@@ -98,11 +101,15 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="register-box2">
                 <div class="register-site-image">
-                  <img
+                  {{-- <img
                     class="register-image"
                     src="https://png.pngtree.com/thumb_back/fw800/background/20220718/pngtree-online-registration-form-for-modish-form-filling-hiring-school-customer-photo-image_47649492.jpg"
                     alt="Registration"
-                  />
+                  /> --}}
+                  <h1>Hello, Welcome!</h1>
+                  <p class="ac-txt">Already have an account?</p>
+                  <a class="login-link" href="{{route('login')}}"> Login </a>
+                </div>
                 </div>
               </div>
             </div>
@@ -111,6 +118,8 @@
       </div>
 
     <div>
+    </section>
+    </div>
         <x-script/>
     </div>
 </body>

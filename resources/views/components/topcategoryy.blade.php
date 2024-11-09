@@ -2,7 +2,7 @@
     <div class="container">
         <div class="heading-section">
             <div class="main-heading">Top Categories</div>
-            <div class="btn-view primary-btn">View More</div>
+            <a href="{{ route('innertopcategory') }}"  class="btn-view primary-btn">View More</a>
         </div>
         <div class="swiper mySwiper mx-lg-2 mx-md-2 mx-sm-0">
             <div class="swiper-wrapper">
@@ -24,18 +24,13 @@
                                         <span class="visible-text">
                                             {{ Str::limit($product->description, 30) }}
                                         </span>
-                                
+
                                         <span class="more-text" style="display:none;">
                                             {{ substr($product->description, 30) }}
                                         </span>
                                     </p>
                                     <a href="javascript:void(0)" class="read-more" onclick="toggleReadMore({{ $product->id }})">Read More</a>
                                 </div>
-                                
-                                
-                                
-                                
-                                
 
                                 <div class="card-bottom">
                                     <h6 class="product-name">

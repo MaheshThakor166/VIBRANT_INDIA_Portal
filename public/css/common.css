@@ -26,6 +26,17 @@ input[type="text"]::-webkit-search-cancel-button {
 .container{
     max-width:1350px;
 }
+.form-container{
+    max-width: 880px;
+}
+.form-outer{
+    background:linear-gradient(90deg, #0a8d7b,#e2e2e2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
 /*common container*/
 /*margin class start*/
   .section-margin{
@@ -146,6 +157,7 @@ input[type="text"]::-webkit-search-cancel-button {
     border: 1px solid var(--primary-color);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: 0.7s all ease-in-out;
+    cursor: pointer;
     text-decoration: none !important;
 }
 .primary-btn:hover{
@@ -305,9 +317,6 @@ input[type="text"]::-webkit-search-cancel-button {
     margin-top: 5px;
     text-decoration: underline;
   }
-
-
-
 
   .card-link {
     position: absolute;

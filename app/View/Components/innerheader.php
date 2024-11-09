@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class topcategory extends Component
+class innerheader extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class topcategory extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.topcategory');
+        return view('components.innerheader');
     }
 }

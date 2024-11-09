@@ -2,7 +2,7 @@
 <html lang="en">
 <x-head/>
 <body>
-    <x-header />
+    <x-innerheader />
     <section class="content product-detail-container">
         <div class="product-container container">
        <div class="row">
@@ -44,7 +44,7 @@
                    </div>
                  </div>
 
-              
+
                </div>
              </div>
            </div>
