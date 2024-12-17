@@ -1,3 +1,75 @@
+let selectedCategory = "Products"; // Default category selection
+
+// Update dropdown selection
+function selectDropdown(category) {
+    selectedCategory = category;
+    document.getElementById("dropdownButton").textContent = category;
+    document.getElementById("suggestions").innerHTML = ""; // Clear suggestions
+}
+
+// Fetch and display suggestions
+function fetchSuggestions() 
+{
+    const query = document.getElementById("search-bar").value.trim();
+
+    if (query.length >= 2) { // Minimum 2 characters to fetch suggestions
+        fetch(`/search-suggestions?query=${query}&category=${selectedCategory}`)
+            .then((response) => response.json())
+            .then((data) => {
+                displaySuggestions(data.suggestions);
+            })
+            .catch((error) => console.error("Error fetching suggestions:", error));
+    } else {
+        document.getElementById("suggestions").innerHTML = ""; // Clear suggestions
+    }
+}
+
+// Display suggestions in the dropdown
+function displaySuggestions(suggestions) {
+    const suggestionsBox = document.getElementById("suggestions");
+    suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "block";
+
+    if (suggestions.length === 0) {
+        suggestionsBox.innerHTML = `<div class="suggestion-item">No results found</div>`;
+        return;
+    }
+
+    // Create clickable suggestion items
+    suggestions.forEach((item) => {
+        const suggestion = document.createElement("div");
+        suggestion.className = "suggestion-item";
+        suggestion.textContent = item.name;
+
+        suggestion.onclick = () => 
+            {
+            if (selectedCategory === "Products") {
+                window.location.href = `/product/${item.id}`; // Product details page
+            }
+             else if (selectedCategory === "Companies") {
+                window.location.href = `/company/${item.id}/products`; // Company's product list page
+            }
+        
+
+        }
+        suggestionsBox.appendChild(suggestion);
+    });
+}
+
+function performSearch(event) 
+{
+    event.preventDefault(); // Prevent form reload
+    const query = document.getElementById("search-bar").value.trim();
+
+    if (query !== "") 
+        {
+        // Redirect based on selected category
+        window.location.href = `/search-results?query=${query}&category=${selectedCategory}`;
+    }
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Toggle Read More
     const descriptions = document.querySelectorAll('.card-description');
@@ -9,7 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Swiper Initialization
+});
+    // Swiper Initializationlet timeout = null;
+
+
     var swiper = new Swiper(".mySwiper", {
         pagination: {
             el: ".swiper-pagination",
@@ -20,11 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: ".swiper-button-prev",
         },
         loop: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 1,
+      slidesPerView: 1,
         spaceBetween: 10,
         breakpoints: {
             430: { slidesPerView: 2, spaceBetween: 10 },
@@ -56,38 +127,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Search Bar Suggestions
-    const searchBar = document.getElementById('search-bar');
-    const suggestions = document.getElementById('suggestions');
-    const suggestionList = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grapes", "Honeydew"];
-    if (searchBar && suggestions) {
-        searchBar.addEventListener('input', function () {
-            const input = searchBar.value.toLowerCase();
-            suggestions.innerHTML = '';
-            if (input) {
-                const filteredSuggestions = suggestionList.filter(item => item.toLowerCase().startsWith(input));
-                if (filteredSuggestions.length > 0) {
-                    suggestions.style.display = 'block';
-                    filteredSuggestions.forEach(item => {
-                        const li = document.createElement('li');
-                        li.textContent = item;
-                        li.addEventListener('click', function () {
-                            searchBar.value = item;
-                            suggestions.style.display = 'none';
-                        });
-                        suggestions.appendChild(li);
-                    });
-                } else {
-                    suggestions.style.display = 'none';
-                }
-            } else {
-                suggestions.style.display = 'none';
-            }
-        });
 
-        document.addEventListener('click', function (e) {
-            if (!searchBar.contains(e.target) && !suggestions.contains(e.target)) {
-                suggestions.style.display = 'none';
-            }
-        });
-    }
-});
+
+    const dropdown = document.getElementById('dropdown');
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Toggle dropdown visibility on button click
+    dropdownButton.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+
+    // Handle dropdown item selection
+    dropdownMenu.addEventListener('click', (e) => {
+      if (e.target.classList.contains('dropdown-item')) {
+        const selectedValue = e.target.textContent; // Get the selected option's text
+        dropdownButton.textContent = selectedValue; // Update dropdown button text
+        dropdown.classList.remove('active'); // Close the dropdown
+      }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });

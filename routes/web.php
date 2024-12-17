@@ -11,10 +11,9 @@ use App\Http\Controllers\Auth\AuthController as AuthController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
-
-
-
-
+Route::get('/search-suggestions', [ProductController::class, 'getSuggestions']);
+Route::get('/company/{id}/products', [ProductController::class, 'companyProducts']);
+Route::get('/product/{id}', [ProductController::class, 'productDetails']);
 
 
 Route::get('/register',[AuthController::class , 'register'])->name('register');

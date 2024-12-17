@@ -21,6 +21,11 @@ class Product extends Model
         
     ];
 
+    public function company()
+{
+    return $this->belongsTo(CompanyDetail::class, 'company_id');
+}
+
     // Relationship to Subcategory
     public function subcategory()
     {
