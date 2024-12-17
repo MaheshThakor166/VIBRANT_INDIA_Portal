@@ -9,18 +9,27 @@
         </div>
         <div class="d-lg-block d-md-block d-sm-none d-none">
         <div class="right-part d-sm-none d-md-block">
-            <!--login-btn-->
-            <a href="{{route('login')}}" class="primary-btn">Sign in</a>
+           
+            @if(Auth::check())
+            <!-- If user is logged in, show Sign Out button -->
+            <a href="{{ route('logout') }}" class="primary-btn"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        @else
+            <!-- If user is not logged in, show Sign In button -->
+            <a href="{{ route('login') }}" class="primary-btn">Sign in</a>
+        @endif
             <!--inqury btn-->
-            <div class="inqiry-box">
-                <a href="#"
-                    class="nav-link nav-link-m text-dark nav-link-fw position-relative d-flex align-items-center">
-                    <span class="inqury-logo">
-                        <img src="{{ asset('images/INQUIRY.png') }}" alt="inquiry">
-                    </span>
-                    <span class="inqury-txt">
-                        inquiry
-                    </span>
+        <div class="inqiry-box">
+               <a href="{{route("admin.login")}}"
+                    class="primary-btn py-2">
+                    
+                    Admin login
                 </a>
             </div>
         </div>
@@ -38,7 +47,7 @@
             <ul class="nav-view">
                 <li class="nav-item mobile-logo py-4 px-1 d-lg-none d-sm-block d-md-none">
                     <div class="logo-container d-md-block d-sm-block d-lg-none">
-                        <a href="#">
+                        <a href="{{route('user.home')}}">
                             <img src="{{ asset('images/mobile-logo.png') }}" alt="company logo" style="height: 100%; width:187px;">
                         </a>
                     </div>
@@ -69,7 +78,7 @@
                     <!--login-btn-->
                     <a href="#" class="primary-btn">Sign in</a>
                     <!--inqury btn-->
-                    <div class="inqiry-box">
+                    {{-- <div class="inqiry-box">
                         <a href="#" class="nav-link nav-link-m text-dark nav-link-fw position-relative d-flex align-items-center">
                             <span class="inqury-logo">
                                 <img src="http://127.0.0.1:8000/images/INQUIRY.png" alt="inquiry">
@@ -78,7 +87,7 @@
                                 inquiry
                             </span>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
                 </li>
             </ul>

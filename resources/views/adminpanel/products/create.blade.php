@@ -17,7 +17,7 @@
         </div>
     @endif
   
-    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="product-form">
+    <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data" class="product-form">
         @csrf
 
         <div class="form-row">
@@ -104,7 +104,7 @@
 
  
 
-    <a href="{{ route('products.index') }}">Back to Product List</a>
+    <a href="{{ route('admin.products.index') }}">Back to Product List</a>
 
 
 

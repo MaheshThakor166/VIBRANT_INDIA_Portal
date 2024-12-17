@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Arr; // Add this import for Arr helper
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +28,29 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    /**
+     * Handle unauthenticated requests by redirecting to the appropriate login page.
+     */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        // Determine the guard used
+        $guard = Arr::get($exception->guards(), 0);
+
+        // Redirect based on the guard
+        switch ($guard) {
+            case 'admin':
+                // Redirect to the admin login page if the 'admin' guard is not authenticated
+                $loginRoute = route('admin.login');
+                break;
+
+            default:
+                // Default to the user login page for the 'web' guard or other guards
+                $loginRoute = route('login');
+                break;
+        }
+
+        return redirect()->guest($loginRoute);
     }
 }

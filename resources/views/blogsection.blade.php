@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <x-head />
-
 </head>
-
 <body>
     <x-header />
+
     <section class="blog-inner-section section-margin">
         <div class="container">
-            <h2 class="title">Cookware Set</h2>
+            <h2 class="title">{{ $blog->heading }}</h2> <!-- Display dynamic heading -->
             <h4 class="sub-content">
-                This nonstick cookware set offers even heating and easy cleanup, with essential pots, pans, and lids for
-                versatile cooking. Perfect for all stovetops, including induction.
+                {{ $blog->detail_subcontent }} <!-- Display dynamic subcontent -->
             </h4>
 
             <div class="img-container">
-                <img src="{{ asset('images/to1.jpg') }}" alt="">
-             </div>
+               <div class="thumbnail_container">
+                <div class="thumbnail">
+                @if($blog->image_url) <!-- Check if image exists -->
+                    <img src="{{ asset('storage/' . $blog->image_url) }}" alt="{{ $blog->heading }}" style="width: 100%; height: auto;"> 
+                @else
+                    <span>No Image</span>
+                @endif
+            </div>
+        </div>
+            </div>
+
             <p class="text-content">
-                "This cookware set is designed to meet the needs of every home cook. Crafted from high-quality materials, it ensures even heat distribution for perfectly cooked meals every time. Whether you're sautéing, frying, or simmering, this set has you covered."
+                {{ $blog->textcontent1 }} <!-- Display dynamic textcontent -->
             </p>
-            <p class="text-content">
-                "Upgrade your kitchen with our premium cookware set, made with durable, non-stick surfaces for easy cooking and cleaning. From novice chefs to seasoned cooks, this set is built for all skill levels and offers everything you need to create your favorite dishes."
-            </p>
-            <p class="text-content">
-                "The ideal cookware set for any home kitchen! Featuring pots, pans, and accessories made from robust materials, it provides superior heat conductivity for fast and even cooking. This set is perfect for everyday meals or special occasions."
-            </p>
-            <p class="text-content">
-                "Designed for versatility and style, this cookware set brings together the perfect combination of durability, comfort, and functionality. Featuring ergonomic handles and a sleek design, it ensures a safe, efficient cooking experience every time."
-            </p>
-            <p class="text-content">
-                "Whether you’re making a quick breakfast or preparing a gourmet dinner, this cookware set provides everything you need. From non-stick coatings to oven-safe pots, this set is built for high performance and long-lasting use."
-            </p>
-                <p class="text-content">
-                "Cook with confidence using our carefully selected cookware set. With its premium non-stick surfaces, sturdy construction, and ergonomic handles, this set is perfect for any meal—big or small."
-            </p>
-            <p class="text-content">
-                "This complete cookware set is all you need to take your cooking to the next level. Its heat-resistant design, easy-to-clean features, and stylish appearance make it a must-have addition to any kitchen."
-            </p>
+
+            @if($blog->subtitle2 && $blog->textcontent2)
+                <div class="additional-content">
+                    <h4>{{ $blog->subtitle2 }}</h4>
+                    <p>{{ $blog->textcontent2 }}</p>
+                </div>
+            @endif
         </div>
     </section>
+
     <x-footer />
-
 </body>
-
 </html>

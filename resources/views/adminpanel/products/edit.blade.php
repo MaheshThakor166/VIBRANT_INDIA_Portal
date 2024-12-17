@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="product-form">
+    <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="product-form">
         @csrf
         @method('PUT')
 
@@ -78,9 +78,10 @@
             <label for="image_url">Image:</label>
             <input type="file" name="image_url" accept="image/*">
             @if($product->image_url)
-                <small>Current Image:</small>
-                <img src="{{ asset('storage/' . $product->image_url) }}" alt="{{ $product->name }}" style="width: 100px; height: auto;">
-            @endif
+            <img src="{{ asset($product->image_url) }}" alt="{{ $product->name }}" style="width: 150px; height: auto;">
+        @else
+            <span>No Image</span>
+        @endif
         </div>
 
         <div class="form-row">
@@ -88,7 +89,7 @@
         </div>
     </form>
 
-    <a href="{{ route('products.index') }}">Back to Product List</a>
+    <a href="{{ route('admin.products.index') }}">Back to Product List</a>
 
 
        <style>

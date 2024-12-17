@@ -18,7 +18,7 @@
             UserList
         </div>
         <div class="btn-view primary-btn">
-            <a href="{{ route('users.create') }}" class="btn text-white ">Create Users</a>
+            <a href="{{ route('admin.users.create') }}" class="btn text-white ">Create Users</a>
         </div>
     </div>
     @if (session('success'))
@@ -38,7 +38,7 @@
         <div class="d-flex flex-row justify-content-between align-items-center mb-2">
        
             <!-- Search Bar -->
-            <form action="{{ route('users.index') }}" method="GET" class="input-group" style="max-width: 200px;">
+            <form action="{{ route('admin.users.index') }}" method="GET" class="input-group" style="max-width: 200px;">
                 <input type="text" name="search" class="form-control border-primary" placeholder="Search Users" aria-label="Search Users" value="{{ request('search') }}" style="border-radius: 3px; box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);">
                 {{-- <button type="submit" class="btn btn-primary">Search</button> --}}
             </form>
@@ -75,11 +75,11 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->contact_no }}</td>
                         <td>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-edit-blue">Edit</a>
+                            <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-edit-blue">Edit</a>
                         </td>
                         
                         <td>
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>

@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
    margin: 0;
    padding:0;
@@ -207,7 +210,7 @@ input[type="text"]::-webkit-search-cancel-button {
         display: none;
     }
     .primary-btn {
-    padding: 8px 9px;
+    padding: 10px 27px;
     color: var(--primary-color);
     border-radius: 21px 1px 21px 1px;
     font-size: 16px;

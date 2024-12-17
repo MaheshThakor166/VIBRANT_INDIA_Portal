@@ -1,3 +1,36 @@
+<style>
+    .text-wrapper {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .card-description {
+        margin-bottom: 8px;
+    }
+
+    .visible-text {
+        display: inline;
+    }
+
+    .more-text {
+        display: none;
+    }
+
+    .read-more {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <section class="top-category section-margin" id="TopCategory">
     <div class="container">
         <div class="heading-section">
@@ -10,11 +43,11 @@
                     @foreach($topCategoryProducts as $product)
                         <div class="swiper-slide">
                             <div class="card-view">
-                                <a href="{{ route('productdetails', $product->id) }}" class="card-link"></a>
+                                <a href="{{ route('product.show', $product->id) }}" class="card-link"></a>
                                 <div class="image-container">
                                     <div class="thumbnail_container">
                                         <div class="thumbnail">
-                                            <img src="{{ asset('storage/' . $product->image_url) }}" class="product-image swiper-img" alt="{{ $product->name }}" onclick="openPopup(this)">
+                                            <img src="{{ asset($product->image_url) }}" class="product-image swiper-img" alt="{{ $product->name }}" onclick="openPopup(this)">
                                         </div>
                                     </div>
                                 </div>
@@ -22,16 +55,14 @@
                                 <div class="text-wrapper">
                                     <p class="card-description content-txt" id="description-{{ $product->id }}">
                                         <span class="visible-text">
-                                            {{ Str::limit($product->description, 30) }}
+                                            {{ Str::limit($product->description, 100) }}
                                         </span>
-
-                                        <span class="more-text" style="display:none;">
-                                            {{ substr($product->description, 30) }}
+                                        <span class="more-text">
+                                            {{ substr($product->description, 100) }}
                                         </span>
                                     </p>
                                     <a href="javascript:void(0)" class="read-more" onclick="toggleReadMore({{ $product->id }})">Read More</a>
                                 </div>
-
                                 <div class="card-bottom">
                                     <h6 class="product-name">
                                         <span class="title">Category: </span>
@@ -52,11 +83,19 @@
 
                                     <!-- CTA button within the card -->
                                     <div class="d-flex justify-content-start mx-2 bottom-btn">
-                                        <a href="{{ route('inquiryform', ['product_id' => $product->id]) }}" class="cta">
-                                            <span>Inquiry</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
+                                        @auth
+                                            <a href="{{ route('inquiryform', ['product_id' => $product->id, 'product_name' => $product->name]) }}" class="cta">
+                                                <span>Inquiry</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('login') }}" class="cta">
+                                                <span>Sign in to Inquire</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        @endauth
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -69,4 +108,35 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <script>
+        // Toggle function
+      function toggleReadMore(productId) {
+    var description = document.getElementById('description-' + productId);
+    var moreText = description.querySelector('.more-text');
+    var readMoreBtn = description.parentNode.querySelector('.read-more');
+
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline"; // Show the additional text
+        readMoreBtn.textContent = "Read Less"; // Update button text
+    } else {
+        moreText.style.display = "none"; // Hide the additional text
+        readMoreBtn.textContent = "Read More"; // Update button text
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var descriptions = document.querySelectorAll('.card-description');
+    descriptions.forEach(function (description) {
+        var moreText = description.querySelector('.more-text');
+        var readMoreBtn = description.parentNode.querySelector('.read-more');
+
+        // Only show the "Read More" link if additional text exists
+        if (!moreText.textContent.trim()) {
+            readMoreBtn.style.display = "none";
+        }
+    });
+});
+
+    </script>
 </section>

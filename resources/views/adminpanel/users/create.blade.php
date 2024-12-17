@@ -5,7 +5,7 @@
 <div class="container user-form-container">
     <h1 class="form-title">Create User</h1>
 
-    <form action="{{ route('users.store') }}" method="POST" class="user-form">
+    <form action="{{ route('admin.users.store') }}" method="POST" class="user-form">
         @csrf
         
         <div class="form-group">

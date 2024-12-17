@@ -4,7 +4,7 @@
 <head>
   <x-head />
 </head>
-<body>
+<body style="background-color:#546093">
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="logo">
@@ -12,11 +12,20 @@
             </div>
             <nav>
                 <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}"><i class="fa-solid fa-house"></i> Dashboard</a>
-                <a href="{{ route('users.index') }}" class="{{ request()->routeIs('userindex') ? 'active' : '' }}"><i class="fa-solid fa-user"></i> Users</a>
-                <a href="#" class="{{ request()->routeIs('orders') ? 'active' : '' }}"><i class="fa-solid fa-shopping-cart"></i> Orders</a>
-                <a href="{{ route('products.index') }}" class="{{ request()->routeIs('products') ? 'active' : '' }}"><i class="fa-solid fa-box"></i> Products</a>
-                <a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a>
-                <a href="#" class="logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+                <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('userindex') ? 'active' : '' }}"><i class="fa-solid fa-user"></i> Users</a>
+                <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('products') ? 'active' : '' }}"><i class="fa-solid fa-box"></i> Products</a>
+
+                <a href="{{ route('admin.inquiry.index') }}" class="{{ request()->routeIs('orders') ? 'active' : '' }}"><i class="fa-solid fa-circle-info"></i>Inquiry</a>
+                <a href="{{ route('admin.blogs.index') }}" class="{{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}"><i class="fa-solid fa-blog"></i> Blogs</a>
+                <a href="#" class="logout" 
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                 <i class="fa-solid fa-sign-out-alt"></i> Logout
+             </a>
+             
+             <!-- Logout Form (hidden) -->
+             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                 @csrf
+             </form>
             </nav>
         </aside>
 

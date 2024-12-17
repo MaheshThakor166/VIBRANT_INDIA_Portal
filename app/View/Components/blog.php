@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class blog extends Component
 {
+    public $blogs;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($blogs)
     {
-        //
+        $this->blogs = $blogs;
     }
 
     /**

@@ -24,11 +24,13 @@
             max-width: 50%;
             margin: auto;
             margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         .blog-inner-section .img-container img{
-            height: 100%;
-            width: 100%;
+            height: 100% !important;
+            width: 100% !important;
+
         }
         .blog-inner-section .sub-content{
             font-size: 20px;
@@ -39,3 +41,36 @@
         .blog-inner-section .text-content{
             color: #464c4d;
         }
+ .blog-inner-section .thumbnail_container{
+    padding-bottom: 100%;
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+ }
+ .blog-inner-section .thumbnail_container .thumbnail{
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+ }
+ .blog-inner-section .thumbnail_container .thumbnail img{
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+ }

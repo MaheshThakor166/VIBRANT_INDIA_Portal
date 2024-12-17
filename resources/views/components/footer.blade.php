@@ -12,7 +12,7 @@
             </div>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="mt-1 mb-1 col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <div class="footer-main-social">
               <div class="footer-social-icon">
                 <a class="footer-icon-link" href="#"><i class="fa-brands fa-facebook-f footer-icon"></i></a>

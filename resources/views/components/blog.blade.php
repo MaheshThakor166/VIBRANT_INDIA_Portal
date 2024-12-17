@@ -4,9 +4,7 @@
             <div class="main-heading">
                 Blog
             </div>
-            <div class="btn-view primary-btn">
-                view More
-            </div>
+          
         </div>
 
         <div class="row mt-5">
@@ -40,42 +38,18 @@
             </div>
             <div class="col-lg-5 mt-sm-5 mt-lg-0 mt-0">
                 <div class="blog-list">
-                    <div class="blog-item">
-                        <img src="{{ asset('images/ba2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">12 July 2023</p>
-                            <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
-                            </h3>
-                            <a href="#" class="read-more">Read More</a>
+                    @foreach ($blogs as $blog)
+                        <div class="blog-item">
+                            <img src="{{ asset('storage/' . $blog->image_url) }}" alt="Blog Thumbnail" class="blog-thumbnail">
+                            <div class="blog-info">
+                                <p class="blog-date">{{ $blog->created_at->format('d F Y') }}</p>
+                                <h3 class="blog-title">{{ $blog->heading }}</h3>
+                                <a href="{{ route('blogsection', $blog->id) }}" class="read-more">Read More</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="{{ asset('images/b2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Hawkins Contura Black XT 5 Litre Inner Lid Pressure Cooker</h3>
-                            <a href="{{ route('blogsection') }}" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="{{ asset('images/ba2.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">12 July 2023</p>
-                            <h3 class="blog-title">Vinod Classique Deluxe Stainless Steel Cookware Combo Set of 2 Pcs
-                            </h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="{{ asset('images/ba3.jpg') }}" alt="Blog Thumbnail" class="blog-thumbnail">
-                        <div class="blog-info">
-                            <p class="blog-date">19 September 2023</p>
-                            <h3 class="blog-title">Fableart Microwave Safe Stainless Steel Kitchen Food Storage</h3>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-
-                    <!-- Add more blog items here -->
+                    @endforeach
                 </div>
             </div>
+            
+        </div>  
 </section>

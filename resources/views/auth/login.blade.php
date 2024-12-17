@@ -1,102 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <x-head/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="form-outer">
-    <section class="form-container">
     <div class="container mt-5">
-        <div class="main-box">
-          <div class="row g-0 m-0">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-              <div class="register-box1">
-                <div class="register-header">Login</div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Login</h2>
 
-                @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+                <!-- Show any error messages -->
+                @if(session('error') && strpos(session('error'), 'OTP') !== false)
+                    <div class="alert alert-warning">
+                        {{ session('error') }}
+                        <a href="{{ route('viewotp') }}" class="btn btn-primary">Go to OTP Verification</a>
+                    </div>
                 @endif
 
-                @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-                @endif
-
-                <form class="mt-3" method="POST" action="{{ route('loginsave') }}">
-                  @csrf
-
-                  <div class="input-field mt-3">
-                    {{-- <span>
-                      <i class="fa-solid fa-envelope input-field-icon"></i>
-                    </span> --}}
-                    <input
-                      class="input-type-box"
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Enter Your Email"
-                    />
-                    <i class="fa-solid fa-envelope input-field-icon"></i>
-                  </div>
-                  @error('email')
-                  <span class="error-message">{{ $message }}</span>
-                  @enderror
-                  <span class="error-message" id="emailError"></span>
-
-                  <div class="input-field mt-3">
-                    {{-- <span><i class="fa-solid fa-lock input-field-icon"></i></span> --}}
-                    <input
-                      class="input-type-box"
-                      type="password"
-                      id="password"
-                      name="password"
-                      placeholder="Enter Your Password"
-                    />
-                    <span><i class="fa-solid fa-lock input-field-icon"></i></span>
-
-                  </div>
-                  @error('password')
-                  <span class="error-message">{{ $message }}</span>
-                  @enderror
-                  <span class="error-message" id="passwordError"></span>
-
-                  <div class="input-field mt-3">
-                    <input
-                      type="submit"
-                      name="submit"
-                      value="Submit"
-                      class="secondary-btn"
-                    />
-                  </div>
-                  {{-- <div class="mt-3">
-                    <span class="account-text"> Don't have an account? </span>
-                    <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
-                  </div> --}}
+                <!-- Login Form -->
+                <form action="{{ route('login.process') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
-              </div>
-            </div>
 
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-0" style="overflow: hidden;">
-              <div class="register-box2">
-                <div class="register-site-image">
-                         <h2>Hello, Welcome!</h2>
-                         <p class="ac-txt">Don't have an account?</p>
-                         <a class="login-link" href="{{ route('register') }}"> Sign Up </a>
-                        </div>
-
-              </div>
+                <!-- Forgot Password and Change Password Links -->
+                <div class="d-flex justify-content-between mt-3">
+                    <a href="{{route('password.request')}}" class="btn btn-link">Forgot Password?</a>
+                    <br>
+                    {{-- <a href="#" class="btn btn-link">Change Password</a> --}}
+                </div>
+              
             </div>
-          </div>
         </div>
-      </div>
-
-      <div>
-        <x-script/>
     </div>
-    </section>
-</div>
 </body>
 </html>

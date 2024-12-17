@@ -140,6 +140,11 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before {
   .s-box {
     margin-left: auto; /* Push the search box to the right */
   }
+  @media screen and (max-width:767px) {
+    .s-box {
+      margin-left: 0;
+  }
+  }
 
   .search-box {
     position: relative;
@@ -307,20 +312,20 @@ header .nav-container .nav-view .nav-item {
 @media screen and (max-width: 767px) {
     header .header-bottom {
         padding: 10px 10px;
+        background-color: var(--light-color);
     }
 }
 
 .fix-postion.header-bottom {
     transition: 0.5s all ease-in-out;
     position: fixed !important;
-    top: 7px;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 999999999999;
   }
   .fix-postion.header-bottom .nav-container .nav-view   {
-  background: rgba(255, 255, 255, .8);
-  border-radius: 50px;
+  border-radius: 0;
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow:2px 4px 5px 0px #666666a3;
 }
